@@ -19,6 +19,9 @@
 - `topology_qa.py` (Phase 5) — runs topology and business-logic QA over
   `stdm.gpkg`, producing `data/synthetic/adjudication_queue.csv` and
   `qa_report.md`. See `qgis/README.md` for what each check does.
+- `classify_tenure_security.py` (Phase 6) — classifies every parcel's
+  tenure security into `data/synthetic/tenure_security.gpkg`. See
+  `qgis/README.md` for the scoring method.
 
 The full end-to-end pipeline (PyQGIS/`qgis_process`, covering every phase
 through the atlas output) is scripted in Phase 9.

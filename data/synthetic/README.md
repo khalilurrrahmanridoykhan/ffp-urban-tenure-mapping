@@ -84,3 +84,9 @@ present it as a real location.
   report showing every check that ran, including the ones that came back
   clean (0 invalid geometries, 0 overlaps, 0 orphaned STR references).
   See `qgis/README.md` for what each check does and why.
+- `tenure_security.gpkg` (layer `tenure_security`, Phase 6) — every
+  parcel classified `secure` / `moderate` / `at_risk` / `contested`, the
+  layer both the Phase 7 dashboard and Phase 8 atlas present. Kept
+  separate from `stdm.gpkg` deliberately — this is a derived
+  policy-analysis layer, not part of the base STDM registry. See
+  `qgis/README.md` for the scoring method.

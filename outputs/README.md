@@ -15,6 +15,9 @@ Generated deliverables.
 - `phase5_adjudication_queue_preview.png` (Phase 5) — parcels colored by
   QA finding: magenta = duplicate claim, orange = boundary conflict,
   yellow = low-confidence spot-check recommended, grey = no finding.
+- `phase6_tenure_security_map.png` (Phase 6) — the tenure-security
+  choropleth: green = secure, yellow = moderate, orange = at_risk,
+  magenta = contested.
 
 The settlement-level tenure-security atlas PDF is added from Phase 8
 onward.
