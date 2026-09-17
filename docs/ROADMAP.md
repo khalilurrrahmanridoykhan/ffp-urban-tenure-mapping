@@ -12,7 +12,7 @@ informal settlement. Each phase ships as its own PR + tag.
 | 4 | STDM integration (person ↔ parcel ↔ tenure relationship) | done |
 | 5 | Topology QA & adjudication flagging | done |
 | 6 | Tenure security classification | done |
-| 7 | Interactive dashboard (web app) | not started |
+| 7 | Interactive dashboard (web app) | done |
 | 8 | Atlas / certificate output | not started |
 | 9 | Scripted end-to-end pipeline | not started |
 
