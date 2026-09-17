@@ -10,6 +10,3 @@ node_modules/
 *.gpkg-wal
 *.gpkg-shm
 *.tif.aux.xml
-*.pt
-*.pth
-*.ckpt
