@@ -119,6 +119,9 @@ def main(seed=7):
           f"{sum(c['action'] == 'reject_not_a_parcel' for c in classified)} rejected. "
           f"True parcels missed entirely by the AI draft: {len(missed)}")
 
+    if os.path.exists(PHOTOS_DIR):
+        for fn in os.listdir(PHOTOS_DIR):
+            os.remove(os.path.join(PHOTOS_DIR, fn))
     os.makedirs(PHOTOS_DIR, exist_ok=True)
     photo_sample_budget = 20
 

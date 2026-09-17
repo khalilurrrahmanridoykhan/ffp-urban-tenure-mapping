@@ -10,16 +10,18 @@ the STDM tables.
 
 ## Why Leaflet `CRS.Simple`, not a real basemap
 
-The settlement's coordinates are an arbitrary local projection
-(deliberately not real-world — see `data/synthetic/README.md`), so a
-real-world slippy-map basemap would either not line up with anything or,
-worse, make the synthetic settlement look like it's really sitting on
-`lon=0, lat=0`. Leaflet's `CRS.Simple` mode is built for exactly this
-case (floor plans, game maps, anything non-geographic): the settlement's
-synthetic imagery is loaded as a plain image overlay, and the parcel
-polygons are pre-converted from metres to that image's pixel space by
+The imagery is real, but its published coordinates are deliberately
+stripped to an arbitrary local grid (see `data/synthetic/README.md`) —
+so a real-world slippy-map basemap would either not line up with
+anything, or defeat the point of stripping the coordinates in the first
+place. Leaflet's `CRS.Simple` mode is built for exactly this case (floor
+plans, game maps, anything non-geographic): the real imagery is loaded
+as a plain image overlay, and the parcel polygons are pre-converted from
+local metres to that image's pixel space by
 `scripts/export_webapp_data.py` — the page itself does no
-coordinate-system reasoning at all, just plots what it's given.
+coordinate-system reasoning at all, just plots what it's given. The
+map's attribution (bottom-right corner) credits the real imagery/building
+sources, same as any map using real data should.
 
 ## Data
 
