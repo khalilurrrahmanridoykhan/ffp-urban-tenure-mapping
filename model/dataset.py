@@ -1,8 +1,9 @@
-"""Tiled train/val dataset for the boundary-extraction model. Generates
-settlements on the fly from settlement_gen.py (never touching the
-canonical seed-42 settlement Phase 1 committed, so evaluation on that
-settlement in predict_boundaries.py is on data the model never trained
-on) and slices each into fixed-size tiles for the U-Net.
+"""Tiled train/val dataset for the boundary-extraction model, built from
+real drone imagery + real OSM building footprints (see
+scripts/real_data_source.py) over 12 train + 3 val AOIs, all spatially
+disjoint from each other and from the canonical AOI Phase 1 committed --
+so evaluation in predict_boundaries.py is on real imagery the model
+never trained on, not just an unseen procedural variation.
 """
 
 import os
@@ -13,40 +14,41 @@ import torch
 from torch.utils.data import Dataset
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
-from settlement_gen import build_settlement, rasterize_parcel_mask, render_imagery  # noqa: E402
+from real_data_source import AOIS_4326, build_real_settlement, get_all_buildings  # noqa: E402
+from settlement_gen import rasterize_parcel_mask  # noqa: E402
 
-TRAIN_SEEDS = list(range(1, 13))   # 12 settlements for training
-VAL_SEEDS = list(range(101, 104))  # 3 held-out settlements for validation
-CANONICAL_SEED = 42                # Phase 1's committed settlement -- never used for training/val
+CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", ".oam_cache")
+
+TRAIN_AOIS = [k for k in AOIS_4326 if k.startswith("train_")]  # 12 AOIs for training
+VAL_AOIS = [k for k in AOIS_4326 if k.startswith("val_")]      # 3 held-out AOIs for validation
+CANONICAL_AOI = "canonical"                                     # Phase 1's committed AOI -- never used for training/val
 
 
 class SettlementTileDataset(Dataset):
-    def __init__(self, seeds, tile_size=256, stride=224, augment=False):
+    def __init__(self, aoi_keys, tile_size=256, stride=224, augment=False):
         self.tile_size = tile_size
         self.augment = augment
         self._settlements = {}
         self.index = []
 
-        for seed in seeds:
-            s = build_settlement(seed)
-            img = render_imagery(
-                s["boundary"], s["road"], s["canal"], s["parcels_gdf"], s["paths"], s["rng"],
-                transform=s["transform"], width=s["width"], height=s["height"],
-            )
+        all_buildings = get_all_buildings(cache_path=os.path.join(CACHE_DIR, "mburahati_buildings.geojson"))
+
+        for key in aoi_keys:
+            s = build_real_settlement(AOIS_4326[key], all_buildings, cache_dir=CACHE_DIR)
             mask = rasterize_parcel_mask(s["parcels_gdf"], s["transform"], s["width"], s["height"])
-            self._settlements[seed] = (img, mask)
+            self._settlements[key] = (s["image"], mask)
 
             h, w = mask.shape
             for y in range(0, max(h - tile_size, 0) + 1, stride):
                 for x in range(0, max(w - tile_size, 0) + 1, stride):
-                    self.index.append((seed, y, x))
+                    self.index.append((key, y, x))
 
     def __len__(self):
         return len(self.index)
 
     def __getitem__(self, i):
-        seed, y, x = self.index[i]
-        img, mask = self._settlements[seed]
+        key, y, x = self.index[i]
+        img, mask = self._settlements[key]
         t = self.tile_size
         img_tile = img[y:y + t, x:x + t, :]
         mask_tile = mask[y:y + t, x:x + t]

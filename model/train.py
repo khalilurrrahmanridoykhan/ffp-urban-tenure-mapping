@@ -1,7 +1,8 @@
-"""Phase 2: trains the parcel-footprint segmentation model on synthetic
-settlements (seeds 1-12 train, 101-103 validation -- never the canonical
-seed-42 settlement Phase 1 committed, so predict_boundaries.py evaluates
-on a settlement the model has genuinely never seen).
+"""Phase 2: trains the parcel-footprint segmentation model on real drone
+imagery + real OSM building footprints over 12 train + 3 val AOIs (see
+scripts/real_data_source.py) -- never the canonical AOI Phase 1
+committed, so predict_boundaries.py evaluates on real imagery the model
+has genuinely never seen.
 
 Run: python3 model/train.py [--epochs 20]
 Output: model/checkpoints/unet_boundary.pt, model/training_log.md
@@ -14,7 +15,7 @@ import time
 import torch
 from torch.utils.data import DataLoader
 
-from dataset import TRAIN_SEEDS, VAL_SEEDS, SettlementTileDataset
+from dataset import TRAIN_AOIS, VAL_AOIS, SettlementTileDataset
 from unet import UNet
 
 CKPT_DIR = os.path.join(os.path.dirname(__file__), "checkpoints")
@@ -39,8 +40,8 @@ def main(epochs, batch_size, lr):
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     print(f"Device: {device}")
 
-    train_ds = SettlementTileDataset(TRAIN_SEEDS, augment=True)
-    val_ds = SettlementTileDataset(VAL_SEEDS, augment=False)
+    train_ds = SettlementTileDataset(TRAIN_AOIS, augment=True)
+    val_ds = SettlementTileDataset(VAL_AOIS, augment=False)
     print(f"Train tiles: {len(train_ds)}, val tiles: {len(val_ds)}")
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=0)
