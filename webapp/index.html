@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FFP Urban Tenure Mapping — Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>FFP Urban Tenure Mapping</h1>
+  <p class="disclaimer">Synthetic demonstration data only — no real place, no real person. See the repo README.</p>
+</header>
+
+<div id="layout">
+  <aside id="sidebar">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="legend">Legend</button>
+      <button class="tab-btn" data-tab="queue">Adjudication queue (<span id="queue-count">0</span>)</button>
+    </div>
+
+    <div id="tab-legend" class="tab-panel active">
+      <h2>Tenure security</h2>
+      <ul class="legend">
+        <li><span class="swatch secure"></span> Secure</li>
+        <li><span class="swatch moderate"></span> Moderate</li>
+        <li><span class="swatch at_risk"></span> At risk</li>
+        <li><span class="swatch contested"></span> Contested</li>
+      </ul>
+      <p class="hint">Click any parcel on the map for its claimant and tenure details.</p>
+      <div id="stats"></div>
+    </div>
+
+    <div id="tab-queue" class="tab-panel">
+      <div class="queue-filters">
+        <select id="filter-category"><option value="">All categories</option></select>
+        <select id="filter-severity"><option value="">All severities</option></select>
+      </div>
+      <div id="queue-list"></div>
+    </div>
+  </aside>
+
+  <main id="map"></main>
+</div>
+
+<div id="detail-panel" class="hidden">
+  <button id="detail-close" aria-label="Close">×</button>
+  <div id="detail-content"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
