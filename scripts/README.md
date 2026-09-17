@@ -16,6 +16,9 @@
   `qgis/README.md` for the methodology.
 - `generate_certificates.py` (Phase 4) — generates sample tenure
   certificates (PDF) from `stdm.gpkg` into `outputs/certificates/`.
+- `topology_qa.py` (Phase 5) — runs topology and business-logic QA over
+  `stdm.gpkg`, producing `data/synthetic/adjudication_queue.csv` and
+  `qa_report.md`. See `qgis/README.md` for what each check does.
 
 The full end-to-end pipeline (PyQGIS/`qgis_process`, covering every phase
 through the atlas output) is scripted in Phase 9.
