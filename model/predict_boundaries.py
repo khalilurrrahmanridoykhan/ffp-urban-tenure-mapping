@@ -1,6 +1,6 @@
-"""Phase 2: runs the trained model over the canonical Phase 1 settlement
-(seed 42 -- never seen during training) and vectorizes its predictions
-into a candidate parcel-boundary layer. This AI draft is deliberately not
+"""Phase 2: runs the trained model over the canonical Phase 1 AOI (real
+imagery, never seen during training) and vectorizes its predictions into
+a candidate parcel-boundary layer. This AI draft is deliberately not
 corrected here -- merged plots, missed parcels, and jagged edges are left
 as-is; Phase 3's participatory validation step is what catches and fixes
 them, same as real FFP pilots that use AI-assisted boundary extraction as
