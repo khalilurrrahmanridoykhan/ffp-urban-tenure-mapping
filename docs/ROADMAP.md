@@ -8,7 +8,7 @@ informal settlement. Each phase ships as its own PR + tag.
 | 0 | Scaffold — repo, README, license, folder layout | done |
 | 1 | Synthetic settlement + imagery generation | done |
 | 2 | AI-assisted boundary extraction (geo AI model) | done |
-| 3 | Participatory boundary demarcation & validation | not started |
+| 3 | Participatory boundary demarcation & validation | done |
 | 4 | STDM integration (person ↔ parcel ↔ tenure relationship) | not started |
 | 5 | Topology QA & adjudication flagging | not started |
 | 6 | Tenure security classification | not started |

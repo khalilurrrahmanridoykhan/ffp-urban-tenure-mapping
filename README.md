@@ -26,6 +26,8 @@ be upgraded later rather than perfect from day one.
 
 - `model/` — the AI-assisted boundary-extraction step (segmentation model
   applied to synthetic imagery)
+- `field_form/` — the ODK XLSForm an enumerator uses to validate the AI
+  draft against ground reality
 - `qgis/` — the QGIS/STDM project: parcel fabric, tenure attributes,
   topology QA, tenure-security classification, print atlas
 - `webapp/` — the interactive dashboard (tenure-security map +
@@ -39,8 +41,9 @@ See `docs/ROADMAP.md` for the phase-by-phase build plan and current status.
 ## Requirements
 
 Python 3.11+ with `geopandas`, `shapely`, `rasterio`, `numpy`, `pandas`,
-`Pillow`, `scipy`, and (for `model/`) `torch`. No GPU required — training
-runs fine on CPU or Apple Silicon (MPS); `model/README.md` has details.
+`Pillow`, `scipy`, `openpyxl`, and (for `model/`) `torch`. No GPU
+required — training runs fine on CPU or Apple Silicon (MPS);
+`model/README.md` has details.
 
 ## License
 
