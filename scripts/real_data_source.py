@@ -1,13 +1,20 @@
 """Real-imagery foundation: replaces settlement_gen.py's procedural
 generation with a real drone orthomosaic and real OSM building footprints
-over an actual informal settlement -- Mburahati, Dar es Salaam, Tanzania.
+over Korail, Dhaka's largest informal settlement (~80,000 residents,
+built on land owned by the Housing and Building Research Institute with
+no formal tenure allocation to residents -- a real, currently unresolved
+tenure-insecurity case, not a hypothetical one; see
+docs/GLOBAL_AND_BANGLADESH_CONTEXT.md).
 
 Source data:
-- Imagery: "Mabibo Mburahati 2024", a 2024 drone orthomosaic (2.1cm/px,
-  DJI Mavic 2 Pro), provider OMDTZ / Iddy Chazua, via OpenAerialMap
+- Imagery: a November 2023 drone orthomosaic (5cm/px, DJI Mavic 2 Pro)
+  over Korail/Banani, provider Geo-Planning for Advanced Development
+  (GPAD) / Rejaur Rahman, via OpenAerialMap
   (https://map.openaerialmap.org, hosted by HOTOSM). License: CC-BY 4.0.
 - Building footprints: OpenStreetMap, via the Overpass API. License:
-  ODbL. (c) OpenStreetMap contributors.
+  ODbL. (c) OpenStreetMap contributors. 5,069 real buildings mapped
+  within this image's extent alone -- Dhaka has been a focus of
+  extensive HOTOSM/OSM building-mapping activity.
 
 Both are real, both are attributed here and in every README that uses
 this data. What's NOT real: every occupant, household, tenure claim, and
@@ -41,10 +48,14 @@ import pyproj
 
 from settlement_gen import build_occupants
 
-SOURCE_TILE_TEMPLATE = "https://tiles.openaerialmap.org/675568899da8040001df994d/0/675568899da8040001df994e/{z}/{x}/{y}"
-SOURCE_ATTRIBUTION = ("Imagery: \"Mabibo Mburahati 2024\", OMDTZ / Iddy Chazua, via OpenAerialMap "
-                      "(CC-BY 4.0). Building footprints: (c) OpenStreetMap contributors (ODbL).")
-OVERPASS_URL = "https://overpass.kumi.systems/api/interpreter"
+SOURCE_TILE_TEMPLATE = "https://tiles.openaerialmap.org/65561f153aa0a7000131672c/0/65561f153aa0a70001316734/{z}/{x}/{y}"
+SOURCE_ATTRIBUTION = ("Imagery: Korail/Banani drone orthomosaic (Nov 2023), Geo-Planning for Advanced "
+                      "Development (GPAD) / Rejaur Rahman, via OpenAerialMap (CC-BY 4.0). "
+                      "Building footprints: (c) OpenStreetMap contributors (ODbL).")
+OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+# The official Overpass instance rejects requests with no User-Agent (406,
+# even to /api/status) -- not a rate limit, a bot-protection rule.
+HTTP_HEADERS = {"User-Agent": "ffp-urban-tenure-mapping-research-script/1.0 (real_data_source.py)"}
 ZOOM = 20
 TILE_PX = 256
 
@@ -71,7 +82,7 @@ def fetch_tile(z, x, y, session):
     url = SOURCE_TILE_TEMPLATE.format(z=z, x=x, y=y)
     for attempt in range(3):
         try:
-            r = session.get(url, timeout=20, allow_redirects=True)
+            r = session.get(url, headers=HTTP_HEADERS, timeout=12, allow_redirects=True)
             if r.status_code == 200 and r.content:
                 return r.content
         except requests.RequestException:
@@ -82,7 +93,12 @@ def fetch_tile(z, x, y, session):
 
 def fetch_mosaic(lon_min, lat_min, lon_max, lat_max, cache_dir=None):
     """Fetches and mosaics real OAM tiles covering the given lon/lat box.
-    Returns (image_array HxWx3 uint8, mercator_transform, merc_bounds)."""
+    Returns (image_array HxWx3 uint8, valid_mask HxW bool, mercator_transform,
+    merc_bounds). valid_mask is False over any tile that failed to fetch
+    (the tile service throttles rapid sequential requests, so occasional
+    failures happen even with retries) -- callers should exclude those
+    regions from training/evaluation rather than treat them as real black
+    pixels, since a training mask still has real building labels there."""
     from PIL import Image
     import io
 
@@ -93,6 +109,7 @@ def fetch_mosaic(lon_min, lat_min, lon_max, lat_max, cache_dir=None):
     n_cols, n_rows = x1 - x0, y1 - y0
 
     mosaic = np.zeros((n_rows * TILE_PX, n_cols * TILE_PX, 3), dtype=np.uint8)
+    valid_mask = np.zeros((n_rows * TILE_PX, n_cols * TILE_PX), dtype=bool)
     session = requests.Session()
     missing = 0
     for row, ty in enumerate(range(y0, y1)):
@@ -103,24 +120,26 @@ def fetch_mosaic(lon_min, lat_min, lon_max, lat_max, cache_dir=None):
                 content = open(cache_path, "rb").read()
             else:
                 content = fetch_tile(ZOOM, tx, ty, session)
+                time.sleep(0.15)  # the tile service throttles rapid sequential requests
                 if content and cache_path:
                     os.makedirs(cache_dir, exist_ok=True)
                     open(cache_path, "wb").write(content)
             if content:
                 tile_img = np.array(Image.open(io.BytesIO(content)).convert("RGB"))
                 mosaic[row * TILE_PX:(row + 1) * TILE_PX, col * TILE_PX:(col + 1) * TILE_PX, :] = tile_img
+                valid_mask[row * TILE_PX:(row + 1) * TILE_PX, col * TILE_PX:(col + 1) * TILE_PX] = True
             else:
                 missing += 1
 
     if missing:
-        print(f"  warning: {missing}/{n_cols * n_rows} tiles failed to fetch")
+        print(f"  warning: {missing}/{n_cols * n_rows} tiles failed to fetch (excluded from training/eval, not treated as real pixels)")
 
     # Web Mercator (EPSG:3857) bounds of the fetched tile grid
     merc_xmin, merc_ymax = _tile_to_merc(x0, y0)
     merc_xmax, merc_ymin = _tile_to_merc(x1, y1)
     res = (merc_xmax - merc_xmin) / (n_cols * TILE_PX)
     transform = from_origin(merc_xmin, merc_ymax, res, res)
-    return mosaic, transform, (merc_xmin, merc_ymin, merc_xmax, merc_ymax)
+    return mosaic, valid_mask, transform, (merc_xmin, merc_ymin, merc_xmax, merc_ymax)
 
 
 def _tile_to_merc(x, y, zoom=ZOOM):
@@ -142,7 +161,7 @@ def fetch_osm_buildings(lon_min, lat_min, lon_max, lat_max, cache_path=None):
     """
     for attempt in range(5):
         try:
-            r = requests.post(OVERPASS_URL, data={"data": query}, timeout=150)
+            r = requests.post(OVERPASS_URL, data={"data": query}, headers=HTTP_HEADERS, timeout=150)
         except requests.RequestException:
             time.sleep(15 * (attempt + 1))
             continue
@@ -184,7 +203,7 @@ def build_real_settlement(bbox_4326, all_buildings_3857, cache_dir=None, min_are
     absolute real-world coordinate retained in the output."""
     lon_min, lat_min, lon_max, lat_max = bbox_4326
 
-    mosaic, merc_transform, merc_bounds = fetch_mosaic(lon_min, lat_min, lon_max, lat_max, cache_dir)
+    mosaic, valid_mask, merc_transform, merc_bounds = fetch_mosaic(lon_min, lat_min, lon_max, lat_max, cache_dir)
 
     aoi_merc = box(*_to_3857(lon_min, lat_min), *_to_3857(lon_max, lat_max))
     buildings = all_buildings_3857[all_buildings_3857.intersects(aoi_merc)].copy()
@@ -209,6 +228,7 @@ def build_real_settlement(bbox_4326, all_buildings_3857, cache_dir=None, min_are
     col0, col1 = int(max(col0, 0)), int(min(col1, mosaic.shape[1]))
     row0, row1 = int(max(row0, 0)), int(min(row1, mosaic.shape[0]))
     img = mosaic[row0:row1, col0:col1, :]
+    img_valid_mask = valid_mask[row0:row1, col0:col1]
 
     res = merc_transform.a
     local_transform = from_origin(0, img.shape[0] * res, res, res)
@@ -216,38 +236,41 @@ def build_real_settlement(bbox_4326, all_buildings_3857, cache_dir=None, min_are
     boundary = Polygon([(0, 0), (img.shape[1] * res, 0), (img.shape[1] * res, img.shape[0] * res), (0, img.shape[0] * res)])
 
     return {"boundary": boundary, "parcels_gdf": gpd.GeoDataFrame(buildings, geometry="geometry"),
-            "image": img, "transform": local_transform, "width": img.shape[1], "height": img.shape[0]}
+            "image": img, "valid_mask": img_valid_mask, "transform": local_transform,
+            "width": img.shape[1], "height": img.shape[0]}
 
 
-FULL_EXTENT_4326 = (39.229123, -6.813991, 39.241473, -6.804107)
+FULL_EXTENT_4326 = (90.40759, 23.777986, 90.415577, 23.785337)
 
 # 16 non-overlapping 150x150m cells (15m gaps) picked from the full drone
-# image extent by real OSM building density (top 16 of 48 candidate
+# image extent by real OSM building density (top 16 of 25 candidate
 # cells) -- hardcoded so every rerun fetches the exact same AOIs
 # regardless of later OSM edits. "canonical" is the one every phase from
 # 3 onward is built on; the 12 train_* + 3 val_* are Phase 2's model
 # training data, spatially disjoint from canonical and from each other.
+# Korail is dense enough that even the sparsest selected cell (24
+# buildings) is a real, if less crowded, part of the settlement fabric.
 AOIS_4326 = {
-    "canonical": (39.233657, -6.809592, 39.235004, -6.808254),
-    "train_01": (39.233657, -6.811063, 39.235004, -6.809725),
-    "train_02": (39.235139, -6.812535, 39.236487, -6.811197),
-    "train_03": (39.229210, -6.811063, 39.230558, -6.809725),
-    "train_04": (39.232175, -6.809592, 39.233522, -6.808254),
-    "train_05": (39.233657, -6.812535, 39.235004, -6.811197),
-    "train_06": (39.239586, -6.808120, 39.240933, -6.806782),
-    "train_07": (39.230693, -6.809592, 39.232040, -6.808254),
-    "train_08": (39.236621, -6.814007, 39.237969, -6.812669),
-    "train_09": (39.229210, -6.809592, 39.230558, -6.808254),
-    "train_10": (39.232175, -6.811063, 39.233522, -6.809725),
-    "train_11": (39.230693, -6.808120, 39.232040, -6.806782),
-    "train_12": (39.229210, -6.812535, 39.230558, -6.811197),
-    "val_01": (39.238104, -6.808120, 39.239451, -6.806782),
-    "val_02": (39.235139, -6.814007, 39.236487, -6.812669),
-    "val_03": (39.230693, -6.812535, 39.232040, -6.811197),
+    "canonical": (90.408845, 23.783224, 90.410192, 23.784457),
+    "train_01": (90.410327, 23.783224, 90.411675, 23.784457),
+    "train_02": (90.411809, 23.783224, 90.413157, 23.784457),
+    "train_03": (90.410327, 23.781867, 90.411675, 23.783100),
+    "train_04": (90.407363, 23.783224, 90.408710, 23.784457),
+    "train_05": (90.408845, 23.781867, 90.410192, 23.783100),
+    "train_06": (90.407363, 23.781867, 90.408710, 23.783100),
+    "train_07": (90.411809, 23.781867, 90.413157, 23.783100),
+    "train_08": (90.407363, 23.777798, 90.408710, 23.779031),
+    "train_09": (90.407363, 23.779154, 90.408710, 23.780387),
+    "train_10": (90.410327, 23.777798, 90.411675, 23.779031),
+    "train_11": (90.407363, 23.780511, 90.408710, 23.781744),
+    "train_12": (90.408845, 23.779154, 90.410192, 23.780387),
+    "val_01": (90.413292, 23.780511, 90.414639, 23.781744),
+    "val_02": (90.408845, 23.777798, 90.410192, 23.779031),
+    "val_03": (90.413292, 23.781867, 90.414639, 23.783100),
 }
 
 
-def get_all_buildings(cache_path="/tmp/oam_tile_cache/mburahati_buildings.geojson"):
+def get_all_buildings(cache_path="/tmp/oam_tile_cache/korail_buildings.geojson"):
     return fetch_osm_buildings(*FULL_EXTENT_4326, cache_path=cache_path)
 
 

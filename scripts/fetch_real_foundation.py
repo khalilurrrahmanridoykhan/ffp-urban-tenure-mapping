@@ -1,6 +1,6 @@
 """Replaces the procedurally-generated Phase 1 foundation with a real
-one: real drone imagery + real OSM building footprints over Mburahati,
-Dar es Salaam (see real_data_source.py for full attribution and the
+one: real drone imagery + real OSM building footprints over Korail,
+Dhaka (see real_data_source.py for full attribution and the
 coordinate-stripping rationale). Occupants remain entirely synthetic,
 generated the same way as before (settlement_gen.build_occupants) --
 only now attached to real building footprints instead of procedural
@@ -29,8 +29,13 @@ CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", ".oam_cache")
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-    all_buildings = get_all_buildings(cache_path=os.path.join(CACHE_DIR, "mburahati_buildings.geojson"))
+    all_buildings = get_all_buildings(cache_path=os.path.join(CACHE_DIR, "korail_buildings.geojson"))
     s = build_real_settlement(AOIS_4326["canonical"], all_buildings, cache_dir=CACHE_DIR)
+
+    coverage = s["valid_mask"].mean()
+    if coverage < 1.0:
+        raise RuntimeError(f"Canonical AOI imagery only {coverage:.1%} covered by successfully-fetched "
+                            f"tiles -- rerun (tile service throttling) before using this as the committed foundation.")
 
     parcels_gdf = gpd.GeoDataFrame(s["parcels_gdf"], geometry="geometry", crs=LOCAL_CRS)
     gpkg_path = os.path.join(OUT_DIR, "settlement.gpkg")
