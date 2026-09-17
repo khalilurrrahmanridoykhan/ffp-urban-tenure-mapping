@@ -6,7 +6,7 @@ directly with reportlab from the stdm.gpkg tables, using the same
 party/spatial_unit/STR data.
 
 Only issued for validated STRs, one per tenure type plus a couple of
-extras -- a representative sample, not all 416, to keep the repo lean.
+extras -- a representative sample, not all of them, to keep the repo lean.
 Disputed STRs get no certificate; they're exactly the material Phase 5's
 adjudication queue works from.
 
@@ -57,8 +57,9 @@ def draw_certificate(path, str_row, party_row, spatial_row):
 
     c.setFillColorRGB(0.75, 0.1, 0.1)
     c.setFont("Helvetica-Bold", 11)
-    c.drawCentredString(w / 2, h - margin - 34,
-                         "SYNTHETIC DEMONSTRATION DOCUMENT -- NOT A LEGAL INSTRUMENT -- NO REAL PERSON OR PLACE")
+    c.drawCentredString(w / 2, h - margin - 34, "DEMONSTRATION DOCUMENT -- NOT A LEGAL INSTRUMENT")
+    c.setFont("Helvetica-Bold", 9)
+    c.drawCentredString(w / 2, h - margin - 46, "Real imagery/building; claimant, tenure claim, and all other details are fictional")
     c.setFillColorRGB(0, 0, 0)
 
     y = h - margin - 60
@@ -107,6 +108,9 @@ def main():
     conn.close()
 
     sample = pick_sample(str_table)
+    if os.path.exists(OUT_DIR):
+        for fn in os.listdir(OUT_DIR):
+            os.remove(os.path.join(OUT_DIR, fn))
     os.makedirs(OUT_DIR, exist_ok=True)
 
     for _, str_row in sample.iterrows():
