@@ -1,12 +1,13 @@
 # Roadmap
 
-Fit-For-Purpose (FFP) land administration build for a synthetic urban/peri-urban
-informal settlement. Each phase ships as its own PR + tag.
+Fit-For-Purpose (FFP) land administration build for a real urban informal
+settlement (Mburahati, Dar es Salaam — real imagery and buildings,
+fictional occupants/tenure). Each phase ships as its own PR + tag.
 
 | Phase | What | Status |
 |---|---|---|
 | 0 | Scaffold — repo, README, license, folder layout | done |
-| 1 | Synthetic settlement + imagery generation | done |
+| 1 | Settlement foundation: real imagery + real buildings, fictional occupants | done |
 | 2 | AI-assisted boundary extraction (geo AI model) | done |
 | 3 | Participatory boundary demarcation & validation | done |
 | 4 | STDM integration (person ↔ parcel ↔ tenure relationship) | done |
@@ -16,4 +17,6 @@ informal settlement. Each phase ships as its own PR + tag.
 | 8 | Atlas / certificate output | not started |
 | 9 | Scripted end-to-end pipeline | not started |
 
-All data is synthetic — see `data/synthetic/README.md`.
+Real imagery/buildings, fictional occupants/tenure — see
+`data/synthetic/README.md` for exactly what's real vs. fictional in
+every file.

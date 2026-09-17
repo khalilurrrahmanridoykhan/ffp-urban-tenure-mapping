@@ -25,8 +25,8 @@ single portable GeoPackage (`data/synthetic/stdm.gpkg`):
 
 | STDM concept | Table | Source |
 |---|---|---|
-| Spatial unit | `spatial_unit` (spatial layer) | Phase 3's `validated_parcels` |
-| Party | `party` | Phase 3's field submissions, deduplicated by `household_id` |
+| Spatial unit | `spatial_unit` (spatial layer) | Phase 3's `validated_parcels` (real buildings) |
+| Party | `party` | Phase 3's field submissions, deduplicated by `household_id` (fictional households) |
 | Tenure type | `tenure_type` | the 5-code FFP lookup used since Phase 3 |
 | Social tenure relationship | `social_tenure_relationship` | one row per claim: `party_id` × `spatial_unit_id` × `tenure_type_id`, `str_status` = `validated` or `disputed` |
 
@@ -38,16 +38,17 @@ join `social_tenure_relationship` to `spatial_unit` on
 `spatial_unit_id` to see tenure overlaid on the parcel fabric, or to
 `party` on `party_id` to see what any one household claims.
 
-37 spatial units carry two STRs each (both `disputed`) — real double
-claims from Phase 3, not synthetic label noise. Reproduce:
-`python3 scripts/build_stdm.py`.
+231 real buildings, 267 fictional parties, 267 STRs, 36 spatial units
+carrying two STRs each (both `disputed`) — real double claims from Phase
+3's fictional-household simulation, not label noise added at this phase.
+Reproduce: `python3 scripts/build_stdm.py`.
 
 ### Tenure documentation (certificates)
 
 `scripts/generate_certificates.py` generates one PDF per validated STR —
 STDM's own Document Generator module produces the same kind of output
 from this same schema. Only issued for `validated` STRs (one per tenure
-type, plus a few extras — a representative sample, not all 416);
+type, plus a few extras — a representative sample, not all 231);
 disputed STRs get no certificate, which is deliberate: they're exactly
 the material Phase 5's adjudication queue works from. Output:
 `outputs/certificates/<str_id>.pdf`.
@@ -62,21 +63,25 @@ silently fixes:
 | check | what it catches | result |
 |---|---|---|
 | `invalid_geometry` | self-intersecting spatial units | 0 |
-| `overlap` | spatial units overlapping by >0.05 m² | 0 |
-| `boundary_conflict` | spatial units <0.5m apart without overlapping (inside typical handheld-GPS error) | 5 |
-| `duplicate_claim` | more than one STR on the same spatial unit | 37 |
+| `overlap` | spatial units overlapping by >0.05 m² | 77 |
+| `boundary_conflict` | spatial units <0.5m apart without overlapping (inside typical handheld-GPS error) | 84 |
+| `duplicate_claim` | more than one STR on the same spatial unit | 36 |
 | `data_integrity` | an STR referencing a party or spatial unit that doesn't exist | 0 |
-| `low_confidence_confirmation` | a parcel the field pass confirmed as-is, but the AI draft's own confidence was below 0.9 | 77 |
+| `low_confidence_confirmation` | a parcel the field pass confirmed as-is, but the AI draft's own confidence was below 0.9 | 0 |
 
-The 37 duplicate claims are real double claims inherited from Phase 3
-(37 spatial units carrying two STRs each in `stdm.gpkg`) — not
-fabricated for this phase. `low_confidence_confirmation` isn't a known
-error either; it's a risk-based recommendation (the enumerator did
-confirm these boundaries), which is why it's `action_required: false` in
-the queue while the other non-empty categories are `true`. Missing
-photo-evidence coverage (4/379 validated STRs) is reported as a metric
-in `qa_report.md`, not as 375 individual queue rows — that's not an
-actionable per-parcel finding.
+This QA pass looks very different against real building footprints than
+it did against the fully-procedural version of this project: real
+buildings in a dense informal settlement are often genuinely
+wall-to-wall or a hand's width apart, so 77 real overlaps and 84 real
+near-misses show up once GPS-walk jitter is applied — this is honest
+topology noise from real geometry, not a bug. `low_confidence_confirmation`
+comes back empty here because none of the real AI draft blobs were
+precise enough for the field pass to mark `confirm_ai_draft` at all (see
+`model/README.md`) — there's nothing to spot-check. The 36 duplicate
+claims are the fictional-household double claims from Phase 3, not
+fabricated for this phase. Missing photo-evidence coverage (3/195
+validated STRs) is reported as a metric in `qa_report.md`, not as 192
+individual queue rows — that's not an actionable per-parcel finding.
 
 Reproduce: `python3 scripts/topology_qa.py`.
 
@@ -103,9 +108,9 @@ tenure-security signal about the household's claim.
 
 | class | score | meaning | count |
 |---|---|---|---|
-| secure | 4-5 | owned, no open boundary conflict | 130 |
-| moderate | 2-3 | customary/owned-undocumented, or downgraded by a boundary conflict | 124 |
-| at_risk | 1 | informal occupation or rented, uncontested | 125 |
-| contested | — | disputed STR, overrides tenure type entirely | 37 |
+| secure | 4-5 | owned, no open boundary conflict | 49 |
+| moderate | 2-3 | customary/owned-undocumented, or downgraded by a boundary conflict | 65 |
+| at_risk | 1 | informal occupation or rented, uncontested | 81 |
+| contested | — | disputed STR, overrides tenure type entirely | 36 |
 
 Reproduce: `python3 scripts/classify_tenure_security.py`.

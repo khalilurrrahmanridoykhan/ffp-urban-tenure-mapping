@@ -1,68 +1,70 @@
 # Geo AI model — AI-assisted boundary extraction
 
-A small U-Net (`unet.py`) that segments parcel footprints from the
-synthetic overhead imagery, giving a rough first-pass boundary draft for
+A small U-Net (`unet.py`) that segments building/parcel footprints from
+**real drone imagery**, giving a rough first-pass boundary draft for
 Phase 3's participatory validation to correct — the same "AI drafts, a
 human adjudicates" division of labor real FFP AI-assisted-extraction
 pilots use.
 
 ## Data
 
-`dataset.py` generates 12 training settlements (seeds 1–12) and 3
-validation settlements (seeds 101–103) on the fly from
-`scripts/settlement_gen.py`, tiled into 256×256 patches. **The canonical
-seed-42 settlement Phase 1 committed is never used for training or
-validation** — Phase 2's evaluation below is on a settlement the model
-has genuinely never seen.
+`dataset.py` builds 12 training AOIs and 3 validation AOIs from real
+imagery + real OSM building footprints (see
+`scripts/real_data_source.py` for the full source and attribution),
+tiled into 256×256 patches. **The canonical AOI Phase 1 committed is
+never used for training or validation** — Phase 2's evaluation below is
+on real imagery the model has genuinely never seen.
 
-Rendering includes a deliberate realism pass (`degrade_realism` in
-`settlement_gen.py`): Gaussian blur + sensor noise applied after the
-vector fabric is painted. Without it, the flat-colored, razor-edged
-synthetic imagery makes parcel segmentation trivially easy (>99.9% IoU,
-zero instance errors) — not a meaningful demonstration of anything. With
-it, the model has to contend with the same kind of soft, ambiguous
-boundaries real overhead imagery has.
+No synthetic realism pass is needed here (an earlier fully-synthetic
+version of this project needed one — flat-colored procedural imagery
+made segmentation trivially easy, >99.9% IoU, zero instance errors).
+Real imagery already has real blur, shadow, occlusion, and roof-material
+ambiguity between adjacent structures, which is exactly what makes this
+version's result below meaningfully harder and more representative.
 
 ## Model & training
 
 `unet.py` — a 4-level U-Net, 16→256 channels, ~2M parameters. `train.py`
-trains it with a BCE + Dice loss on MPS (Apple Silicon GPU). The
-checkpoint committed here (`checkpoints/unet_boundary.pt`) was trained
-for **5 epochs only** — deliberately brief, representative of a
-resource-constrained first pilot rather than a fully converged
-production model. See `training_log.md` for the full curve.
+trains it with a BCE + Dice loss on MPS (Apple Silicon GPU) for 20
+epochs. Validation IoU plateaus around **0.75–0.77**, not near-perfect —
+consistent with published results on real informal-settlement
+building-footprint extraction (dense, touching structures with similar
+roof materials are genuinely hard to separate from imagery alone). See
+`training_log.md` for the full curve.
 
-Reproduce: `python3 train.py --epochs 5`
+Reproduce: `python3 train.py --epochs 20`
 
 ## Inference & evaluation
 
 `predict_boundaries.py` runs sliding-window inference over Phase 1's
-committed `data/synthetic/imagery.tif`, thresholds and connects the
-prediction into blobs, vectorizes each into a polygon (with a per-blob
-mean-confidence score), and writes the result to
-`data/synthetic/ai_draft_parcels.gpkg` (layer `ai_draft_parcels`) — the
-draft Phase 3 works from.
+committed `data/synthetic/imagery.tif` (the real canonical AOI),
+thresholds and connects the prediction into blobs, vectorizes each into
+a polygon (with a per-blob mean-confidence score), and writes the result
+to `data/synthetic/ai_draft_parcels.gpkg` (layer `ai_draft_parcels`) —
+the draft Phase 3 works from.
 
-It also scores that draft against Phase 1's true parcel layer and writes
-`eval_report.md`. Current result:
+It also scores that draft against Phase 1's true (real) building layer
+and writes `eval_report.md`. Current result:
 
 | metric | value |
 |---|---|
-| pixel IoU | 0.981 |
-| true parcels | 416 |
-| draft blobs | 418 |
-| matched / missed true parcels | 416 / 0 |
-| true parcels split across multiple draft blobs | 0 |
-| mean per-parcel boundary IoU | 0.969 |
-| worst per-parcel boundary IoU | 0.917 |
+| pixel IoU | 0.826 |
+| true parcels (real buildings) | 231 |
+| draft blobs | 74 |
+| matched / missed true parcels | 216 / 15 |
+| draft blobs covering multiple true parcels | 33 |
+| true parcels absorbed into a merged blob | 178 |
 
-Reading this honestly: the model gets parcel *topology* right (correct
-count, no merges, no splits by a 30%-overlap threshold) but not
-*precise* boundaries — every matched parcel's drawn outline deviates
-visibly from the true survey line (up to ~8% IoU loss on the worst
-case), and 2 of the 418 draft blobs don't cleanly correspond to any
-single true parcel. That's the actual shape of what Phase 3 has to
-check: not "which parcels did the AI miss entirely" but "where exactly
-does this boundary really sit, and are these two stray fragments real."
+Reading this honestly: this is a real, substantial merging problem —
+most of the settlement's tightly-packed real buildings get folded into
+larger draft blobs rather than kept as separate parcels, and 15 real
+buildings are missed by the model entirely. That's not a synthetic
+stand-in for imperfection, it's the actual, expected failure mode of
+building-footprint segmentation in a dense informal settlement: adjacent
+structures sharing walls or near-identical corrugated-tin roofs are
+genuinely hard to separate from imagery alone. This is exactly the
+material Phase 3's participatory validation exists to resolve — a human
+walking the block knows where one household's roof ends and the
+neighbour's begins even when the model can't.
 
 Reproduce: `python3 predict_boundaries.py`

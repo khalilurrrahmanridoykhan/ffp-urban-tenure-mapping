@@ -13,8 +13,9 @@ Generated deliverables.
   certificates, one PDF per validated social tenure relationship (one
   per tenure type, plus a few extras). See `qgis/README.md`.
 - `phase5_adjudication_queue_preview.png` (Phase 5) — parcels colored by
-  QA finding: magenta = duplicate claim, orange = boundary conflict,
-  yellow = low-confidence spot-check recommended, grey = no finding.
+  QA finding: magenta = duplicate claim, orange = boundary conflict or
+  overlap, yellow = low-confidence spot-check recommended, grey = no
+  finding.
 - `phase6_tenure_security_map.png` (Phase 6) — the tenure-security
   choropleth: green = secure, yellow = moderate, orange = at_risk,
   magenta = contested.
