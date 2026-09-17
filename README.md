@@ -36,6 +36,12 @@ be upgraded later rather than perfect from day one.
 
 See `docs/ROADMAP.md` for the phase-by-phase build plan and current status.
 
+## Requirements
+
+Python 3.11+ with `geopandas`, `shapely`, `rasterio`, `numpy`, `pandas`,
+`Pillow`, `scipy`, and (for `model/`) `torch`. No GPU required — training
+runs fine on CPU or Apple Silicon (MPS); `model/README.md` has details.
+
 ## License
 
 Apache 2.0 — see `LICENSE`.

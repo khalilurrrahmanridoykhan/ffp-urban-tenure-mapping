@@ -36,6 +36,14 @@ present it as a real location.
   directly from the vector fabric above: each parcel gets a randomised
   corrugated-roof color with per-pixel texture noise, the road and canal
   get their own textures, and small green vegetation blobs are scattered
-  through the path space. This is the imagery input Phase 2's
-  boundary-extraction model trains/runs against — it is not derived from
-  any satellite, drone, or aerial imagery source.
+  through the path space, then a Gaussian blur + sensor noise pass
+  (`degrade_realism` in `scripts/settlement_gen.py`) is applied so the
+  thin gaps between parcels aren't perfectly crisp — without it the
+  imagery is unrealistically easy for a segmentation model. This is the
+  imagery input Phase 2's boundary-extraction model trains/runs against —
+  it is not derived from any satellite, drone, or aerial imagery source.
+- `ai_draft_parcels.gpkg` (layer `ai_draft_parcels`, Phase 2) — the
+  model's candidate parcel boundaries, vectorized from its predicted mask
+  (`draft_id`, `area_m2`, `confidence`). Deliberately not corrected —
+  see `model/README.md` for how it compares to the true `parcels` layer
+  above, and Phase 3 for the participatory correction pass.
