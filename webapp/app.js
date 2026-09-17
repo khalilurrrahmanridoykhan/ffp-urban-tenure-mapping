@@ -144,7 +144,7 @@ async function main() {
 
   map = L.map("map", { crs: L.CRS.Simple, minZoom: -2, maxZoom: 4 });
   L.imageOverlay("data/imagery.jpg", bounds, {
-    attribution: 'Imagery: "Mabibo Mburahati 2024", OMDTZ / Iddy Chazua, via <a href="https://map.openaerialmap.org" target="_blank" rel="noopener">OpenAerialMap</a> (CC-BY 4.0). Buildings: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors (ODbL). Occupants/tenure: fictional.',
+    attribution: 'Imagery: Korail/Banani drone orthomosaic (Nov 2023), GPAD / Rejaur Rahman, via <a href="https://map.openaerialmap.org" target="_blank" rel="noopener">OpenAerialMap</a> (CC-BY 4.0). Buildings: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors (ODbL). Occupants/tenure: fictional.',
   }).addTo(map);
   map.fitBounds(bounds);
 
