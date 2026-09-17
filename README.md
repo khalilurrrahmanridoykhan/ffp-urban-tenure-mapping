@@ -7,23 +7,27 @@ tenure-security classification, and both an interactive dashboard and a
 print-ready atlas as outputs.
 
 **Real imagery, real buildings, fictional people.** The overhead imagery
-and building footprints are real — a 2024 drone orthomosaic and OSM
-building traces over Mburahati, a real informal settlement in Dar es
-Salaam, Tanzania (properly attributed below and in
-`scripts/real_data_source.py`). Every occupant, household, tenure claim,
-and dispute from Phase 3 onward is entirely fictional. Real-world
-coordinates are stripped from every published file — everything here
-uses an arbitrary local coordinate grid, so nothing lets you
-reverse-locate a specific "disputed" building to a real street address;
-that said, using real imagery of a real, identifiable place means the
-place itself remains visually identifiable to anyone who recognizes it,
-which no coordinate-stripping can change. See `data/synthetic/README.md`
-for exactly what's real vs. fictional in every file. This is a
-methodology demonstration, not a deployable cadastre system, and not
-affiliated with any real land administration authority.
+and building footprints are real — a November 2023 drone orthomosaic and
+OSM building traces over **Korail, Dhaka's largest informal settlement**
+(~80,000 residents, on land whose formal owner is the Housing and
+Building Research Institute, with no formal tenure allocation to the
+households who actually live there — a real, currently unresolved
+tenure-insecurity case; see `docs/GLOBAL_AND_BANGLADESH_CONTEXT.md`).
+Every occupant, household, tenure claim, and dispute from Phase 3 onward
+is entirely fictional. Real-world coordinates are stripped from every
+published file — everything here uses an arbitrary local coordinate
+grid, so nothing lets you reverse-locate a specific "disputed" building
+to a real street address; that said, using real imagery of a real,
+identifiable place means the place itself remains visually identifiable
+to anyone who recognizes it, which no coordinate-stripping can change.
+See `data/synthetic/README.md` for exactly what's real vs. fictional in
+every file. This is a methodology demonstration, not a deployable
+cadastre system, and not affiliated with any real land administration
+authority, NGO, or the HBRI.
 
-**Attribution** (CC-BY 4.0 / ODbL, both require it): Imagery — "Mabibo
-Mburahati 2024", OMDTZ / Iddy Chazua, via
+**Attribution** (CC-BY 4.0 / ODbL, both require it): Imagery — Korail/
+Banani drone orthomosaic (Nov 2023), Geo-Planning for Advanced
+Development (GPAD) / Rejaur Rahman, via
 [OpenAerialMap](https://map.openaerialmap.org). Building footprints —
 © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors.
 
@@ -38,6 +42,15 @@ paper trail. FFP land administration (FAO/GLTN) trades survey-grade
 precision for speed and inclusiveness: general boundaries instead of exact
 ones, low-cost tools, participatory adjudication, and a data model built to
 be upgraded later rather than perfect from day one.
+
+This isn't a hypothetical methodology — Rwanda's Land Tenure
+Regularization program used this same participatory-orthophoto approach
+to register **10.4 million parcels** and issue **8.8 million lease
+certificates** in four years, at roughly **US$6/parcel**. The STDM data
+model Phase 4 builds is a formal specialisation of **ISO 19152 (LADM)**,
+the international land administration standard. Full sources, the LADM
+schema mapping, and Bangladesh's own land-digitization programs this
+would plug into: `docs/GLOBAL_AND_BANGLADESH_CONTEXT.md`.
 
 ## What's here
 
