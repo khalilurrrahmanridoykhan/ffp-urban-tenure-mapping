@@ -22,6 +22,8 @@
 - `classify_tenure_security.py` (Phase 6) — classifies every parcel's
   tenure security into `data/synthetic/tenure_security.gpkg`. See
   `qgis/README.md` for the scoring method.
+- `export_webapp_data.py` (Phase 7) — exports static JSON/GeoJSON/JPEG
+  snapshots into `webapp/data/` for the dashboard. See `webapp/README.md`.
 
 The full end-to-end pipeline (PyQGIS/`qgis_process`, covering every phase
 through the atlas output) is scripted in Phase 9.
