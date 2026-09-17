@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+.next/
+.env
+.env.local
+*.qgz~
+*.gpkg-wal
+*.gpkg-shm
+*.tif.aux.xml
+*.pt
+*.pth
+*.ckpt
