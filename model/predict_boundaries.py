@@ -39,6 +39,7 @@ REPORT_PATH = os.path.join(os.path.dirname(__file__), "eval_report.md")
 TILE = 256
 STRIDE = 192
 MIN_BLOB_AREA_M2 = 5.0
+BINARIZATION_THRESHOLD = 0.65
 
 
 def sliding_window_predict(model, img, device):
@@ -161,7 +162,13 @@ def main():
     model.load_state_dict(torch.load(CKPT_PATH, map_location=device))
 
     prob_map = sliding_window_predict(model, img, device)
-    binary = prob_map > 0.5
+    # 0.5 is pixel-IoU-optimal on the held-out val set (0.25 IoU) but
+    # produces one giant connected blob over Korail's wall-to-wall
+    # buildings -- 636 separate components appear at 0.65, at the cost of
+    # some pixel accuracy (0.19 val IoU). Instance separation is what
+    # Phase 3's participatory workflow needs a draft to have; see
+    # model/README.md for the full threshold-sweep numbers behind this.
+    binary = prob_map > BINARIZATION_THRESHOLD
     binary = ndimage.binary_opening(binary, structure=np.ones((3, 3)))
 
     labeled, n_labels = ndimage.label(binary, structure=np.ones((3, 3)))
