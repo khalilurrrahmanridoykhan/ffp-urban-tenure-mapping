@@ -4,6 +4,13 @@
   parcel fabric, occupant roster, and overhead imagery in
   `data/synthetic/`. See that folder's README for what each output layer
   is and how it's built.
+- `settlement_gen.py` (Phase 1) — the shared settlement-generation
+  procedure both the Phase 1 script and Phase 2's training-data builder
+  import from.
+- `build_xlsform.py` (Phase 3) — builds `field_form/ffp_boundary_validation.xlsx`.
+- `simulate_field_validation.py` (Phase 3) — simulates the field pass
+  against the AI draft, producing `data/synthetic/field_submissions.csv`
+  and `data/synthetic/validated_parcels.gpkg`.
 
 The full end-to-end pipeline (PyQGIS/`qgis_process`, covering every phase
 through the atlas output) is scripted in Phase 9.

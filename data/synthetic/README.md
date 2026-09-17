@@ -47,3 +47,22 @@ present it as a real location.
   (`draft_id`, `area_m2`, `confidence`). Deliberately not corrected —
   see `model/README.md` for how it compares to the true `parcels` layer
   above, and Phase 3 for the participatory correction pass.
+- `field_submissions.csv` (Phase 3) — one row per simulated ODK
+  submission (columns match `field_form/ffp_boundary_validation.xlsx`
+  exactly, plus `_id`/`_uuid` meta fields as a real ODK/Kobo export would
+  have). Two rows per parcel where a second household disputes the
+  claim. Built by `scripts/simulate_field_validation.py`, which plays
+  the enumerator using Phase 1's true parcel/occupant data as ground
+  truth — every correction, rejection, and dispute in this file traces
+  back to a real discrepancy or a real second claimant, not an arbitrary
+  random label.
+- `validated_parcels.gpkg` (layer `validated_parcels`, Phase 3) — the
+  corrected parcel fabric after the field pass: 416 parcels, each with
+  `boundary_action`, `tenure_type` (or `disputed` where claimants
+  disagree), `dispute_flag`, and `n_claimants`. This is what Phase 4's
+  STDM model is built from.
+- `field_photos/` (Phase 3) — a 20-photo sample of evidence photos
+  (every disputed and rejected case, plus a small random sample of
+  routine ones), each a real crop of `imagery.tif` at that parcel's
+  location — not a full photo per parcel, to keep the repo lean, but a
+  genuine demonstration of the capability.
