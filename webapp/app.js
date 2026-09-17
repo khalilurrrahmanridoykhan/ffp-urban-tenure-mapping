@@ -143,7 +143,9 @@ async function main() {
   const bounds = [[0, 0], [meta.height, meta.width]];
 
   map = L.map("map", { crs: L.CRS.Simple, minZoom: -2, maxZoom: 4 });
-  L.imageOverlay("data/imagery.jpg", bounds).addTo(map);
+  L.imageOverlay("data/imagery.jpg", bounds, {
+    attribution: 'Imagery: "Mabibo Mburahati 2024", OMDTZ / Iddy Chazua, via <a href="https://map.openaerialmap.org" target="_blank" rel="noopener">OpenAerialMap</a> (CC-BY 4.0). Buildings: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors (ODbL). Occupants/tenure: fictional.',
+  }).addTo(map);
   map.fitBounds(bounds);
 
   const security = await loadJSON("data/tenure_security.geojson");
