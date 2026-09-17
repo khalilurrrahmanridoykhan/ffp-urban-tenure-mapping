@@ -1,7 +1,7 @@
 # Roadmap
 
 Fit-For-Purpose (FFP) land administration build for a real urban informal
-settlement (Mburahati, Dar es Salaam — real imagery and buildings,
+settlement (Korail, Dhaka — real imagery and buildings,
 fictional occupants/tenure). Each phase ships as its own PR + tag.
 
 | Phase | What | Status |

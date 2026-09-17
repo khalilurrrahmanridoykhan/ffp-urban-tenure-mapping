@@ -31,17 +31,28 @@ class SettlementTileDataset(Dataset):
         self._settlements = {}
         self.index = []
 
-        all_buildings = get_all_buildings(cache_path=os.path.join(CACHE_DIR, "mburahati_buildings.geojson"))
+        all_buildings = get_all_buildings(cache_path=os.path.join(CACHE_DIR, "korail_buildings.geojson"))
 
+        skipped_tiles = 0
         for key in aoi_keys:
             s = build_real_settlement(AOIS_4326[key], all_buildings, cache_dir=CACHE_DIR)
             mask = rasterize_parcel_mask(s["parcels_gdf"], s["transform"], s["width"], s["height"])
             self._settlements[key] = (s["image"], mask)
 
             h, w = mask.shape
+            valid = s["valid_mask"]
             for y in range(0, max(h - tile_size, 0) + 1, stride):
                 for x in range(0, max(w - tile_size, 0) + 1, stride):
-                    self.index.append((key, y, x))
+                    # Skip tiles with any tile-fetch gaps -- a gap is a
+                    # missing image (all-zero pixels) that would otherwise
+                    # be paired with real building labels there, teaching
+                    # the model that black patches are buildings.
+                    if valid[y:y + tile_size, x:x + tile_size].all():
+                        self.index.append((key, y, x))
+                    else:
+                        skipped_tiles += 1
+        if skipped_tiles:
+            print(f"Skipped {skipped_tiles} tiles with tile-fetch gaps (excluded from training/val, not zero-filled)")
 
     def __len__(self):
         return len(self.index)

@@ -7,9 +7,11 @@ anything about a given layer — real and fictional data sit side by side
 here, and which is which matters.
 
 **Real**: `settlement.gpkg`'s `parcels` layer and `imagery.tif` — a real
-2024 drone orthomosaic and real OSM building footprints over Mburahati,
-Dar es Salaam, Tanzania (see `scripts/real_data_source.py` for the exact
-source, license, and attribution). Everything downstream that's
+November 2023 drone orthomosaic and real OSM building footprints over
+**Korail, Dhaka's largest informal settlement** (see
+`scripts/real_data_source.py` for the exact source, license, and
+attribution, and `docs/GLOBAL_AND_BANGLADESH_CONTEXT.md` for why this
+place). Everything downstream that's
 *derived* from real geometry (`ai_draft_parcels.gpkg`,
 `validated_parcels.gpkg`'s boundaries, `stdm.gpkg`'s `spatial_unit`,
 `tenure_security.gpkg`) is real too, in the sense that the shapes are
@@ -73,29 +75,32 @@ real-world coordinates.
 ## Layers
 
 - `settlement.gpkg` — `boundary` (each AOI's 150m × 150m extent) and
-  `parcels` (real building footprints, 231 in the canonical AOI, built
-  by `scripts/fetch_real_foundation.py` from real OSM building traces,
-  clipped to the AOI and re-origined to local metres).
+  `parcels` (real building footprints, **482** in the canonical AOI —
+  Korail is one of the densest urban informal settlements anywhere —
+  built by `scripts/fetch_real_foundation.py` from real OSM building
+  traces, clipped to the AOI and re-origined to local metres).
 - `occupants.csv` — one row per fictional household (`household_id`,
   `parcel_id`, `occupant_name`, `household_size`), 1–2 households per
   real building depending on its size. Names are drawn from a small
   fixed pool of common Bengali first/last names purely for readability —
-  they do not refer to real people and have no connection to Tanzania;
-  `is_synthetic` is `True` on every row. (Built by
-  `scripts/settlement_gen.py`'s `build_occupants`, reused unchanged from
-  the original fully-procedural version — it only needs a parcel's ID
-  and area, so it works the same whether the parcel is real or
-  procedural.)
+  they do not refer to any real Korail resident; `is_synthetic` is
+  `True` on every row. (Built by `scripts/settlement_gen.py`'s
+  `build_occupants`, reused unchanged from the original fully-procedural
+  version — it only needs a parcel's ID and area, so it works the same
+  whether the parcel is real or procedural.)
 - `imagery.tif` — the real drone orthomosaic, cropped to the AOI and
-  re-origined to local metres (0.149m/px). Source: "Mabibo Mburahati
-  2024", OMDTZ / Iddy Chazua, via OpenAerialMap, CC-BY 4.0.
+  re-origined to local metres (0.149m/px). Source: Korail/Banani drone
+  orthomosaic (Nov 2023), Geo-Planning for Advanced Development (GPAD) /
+  Rejaur Rahman, via OpenAerialMap, CC-BY 4.0.
 - `ai_draft_parcels.gpkg` (layer `ai_draft_parcels`, Phase 2) — the
   model's candidate parcel boundaries, vectorized from its predicted
   mask over the real imagery (`draft_id`, `area_m2`, `confidence`).
   Deliberately not corrected — see `model/README.md` for how it compares
-  to the real `parcels` layer above (spoiler: badly — real informal
-  settlements are genuinely hard to segment), and Phase 3 for the
-  participatory correction pass.
+  to the real `parcels` layer above (spoiler: badly — Korail's
+  wall-to-wall density makes this a genuinely hard segmentation problem,
+  consistent with published remote-sensing literature on very dense
+  informal settlements), and Phase 3 for the participatory correction
+  pass.
 - `field_submissions.csv` (Phase 3) — one row per simulated ODK
   submission (columns match `field_form/ffp_boundary_validation.xlsx`
   exactly, plus `_id`/`_uuid` meta fields as a real ODK/Kobo export would
@@ -107,33 +112,35 @@ real-world coordinates.
   AI draft vs. the real building) or a fictional second claimant, not an
   arbitrary random label.
 - `validated_parcels.gpkg` (layer `validated_parcels`, Phase 3) — the
-  corrected parcel fabric after the field pass: 231 real buildings, each
-  with `boundary_action`, `tenure_type` (fictional, or `disputed` where
-  fictional claimants disagree), `dispute_flag`, and `n_claimants`. This
-  is what Phase 4's STDM model is built from.
+  corrected parcel fabric after the field pass: **482** real buildings,
+  each with `boundary_action`, `tenure_type` (fictional, or `disputed`
+  where fictional claimants disagree), `dispute_flag`, and
+  `n_claimants`. This is what Phase 4's STDM model is built from.
 - `field_photos/` (Phase 3) — a sample of evidence photos (every
   disputed and rejected case, plus a small random sample of routine
   ones), each a real crop of the real `imagery.tif` at that parcel's
   location — not a full photo per parcel, to keep the repo lean, but a
   genuine demonstration of the capability.
 - `stdm.gpkg` (Phase 4) — the Social Tenure Domain Model: `spatial_unit`
-  (spatial layer, the 231 real validated buildings), `party` (fictional
+  (spatial layer, the 482 real validated buildings), `party` (fictional
   households, keyed by `household_id`, one row per unique claimant),
   `tenure_type` (the 5-code lookup), and `social_tenure_relationship`
-  (rows linking party ↔ spatial unit ↔ tenure type — several spatial
-  units carry two STRs, one per disputing fictional claimant). The
-  non-spatial tables are registered as proper GeoPackage `attributes`
-  tables (spec section 6), not just SQL leftovers, so they browse
-  correctly in QGIS/any GeoPackage-aware tool. See `qgis/README.md` for
-  why this is a scripted schema replication of STDM rather than the live
-  STDM QGIS plugin, and how it maps to Phase 3's data.
+  (rows linking party ↔ spatial unit ↔ tenure type — 14 spatial units
+  carry two STRs, one per disputing fictional claimant). The non-spatial
+  tables are registered as proper GeoPackage `attributes` tables (spec
+  section 6), not just SQL leftovers, so they browse correctly in
+  QGIS/any GeoPackage-aware tool. See `qgis/README.md` for why this is a
+  scripted schema replication of STDM (and its formal alignment to ISO
+  19152/LADM) rather than the live STDM QGIS plugin, and how it maps to
+  Phase 3's data.
 - `adjudication_queue.csv` + `qa_report.md` (Phase 5) — the output of
   `scripts/topology_qa.py` over the real building fabric plus fictional
-  tenure data: genuine geometric overlaps (real buildings packed tightly
-  enough that GPS-walk jitter produces real overlaps), near-miss
-  boundaries, and duplicate (fictional) claims, plus a report showing
-  every check that ran, including the ones that came back clean. See
-  `qgis/README.md` for what each check does and why.
+  tenure data: **22 genuine geometric overlaps and 219 near-miss
+  boundaries** (Korail's real buildings are often genuinely wall-to-wall,
+  so GPS-walk jitter produces far more real topology findings here than
+  in a less dense settlement), plus 14 duplicate (fictional) claims and
+  a report showing every check that ran, including the ones that came
+  back clean. See `qgis/README.md` for what each check does and why.
 - `tenure_security.gpkg` (layer `tenure_security`, Phase 6) — every real
   parcel classified `secure` / `moderate` / `at_risk` / `contested`
   based on its fictional tenure data, the layer both the Phase 7

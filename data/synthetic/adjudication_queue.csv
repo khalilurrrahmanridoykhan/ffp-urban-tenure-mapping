@@ -1,198 +1,256 @@
 finding_id,category,severity,action_required,spatial_unit_ids,party_ids,description,status
-QA-0001,overlap,high,True,P0159;P0185,,Spatial units P0159 and P0185 overlap by 0.09 m2.,open
-QA-0002,overlap,high,True,P0223;P0224,,Spatial units P0223 and P0224 overlap by 0.37 m2.,open
-QA-0003,overlap,high,True,P0048;P0168,,Spatial units P0048 and P0168 overlap by 0.37 m2.,open
-QA-0004,overlap,high,True,P0048;P0167,,Spatial units P0048 and P0167 overlap by 0.05 m2.,open
-QA-0005,overlap,high,True,P0051;P0144,,Spatial units P0051 and P0144 overlap by 0.12 m2.,open
-QA-0006,overlap,high,True,P0152;P0056,,Spatial units P0152 and P0056 overlap by 0.73 m2.,open
-QA-0007,overlap,high,True,P0046;P0221,,Spatial units P0046 and P0221 overlap by 0.31 m2.,open
-QA-0008,overlap,high,True,P0191;P0187,,Spatial units P0191 and P0187 overlap by 0.07 m2.,open
-QA-0009,overlap,high,True,P0191;P0188,,Spatial units P0191 and P0188 overlap by 1.56 m2.,open
-QA-0010,overlap,high,True,P0039;P0139,,Spatial units P0039 and P0139 overlap by 0.92 m2.,open
-QA-0011,overlap,high,True,P0135;P0161,,Spatial units P0135 and P0161 overlap by 0.22 m2.,open
-QA-0012,overlap,high,True,P0007;P0054,,Spatial units P0007 and P0054 overlap by 1.97 m2.,open
-QA-0013,overlap,high,True,P0007;P0018,,Spatial units P0007 and P0018 overlap by 1.26 m2.,open
-QA-0014,overlap,high,True,P0100;P0023,,Spatial units P0100 and P0023 overlap by 1.20 m2.,open
-QA-0015,overlap,high,True,P0128;P0155,,Spatial units P0128 and P0155 overlap by 0.11 m2.,open
-QA-0016,overlap,high,True,P0129;P0130,,Spatial units P0129 and P0130 overlap by 0.96 m2.,open
-QA-0017,overlap,high,True,P0129;P0162,,Spatial units P0129 and P0162 overlap by 0.26 m2.,open
-QA-0018,overlap,high,True,P0028;P0029,,Spatial units P0028 and P0029 overlap by 0.06 m2.,open
-QA-0019,overlap,high,True,P0003;P0178,,Spatial units P0003 and P0178 overlap by 1.15 m2.,open
-QA-0020,overlap,high,True,P0002;P0151,,Spatial units P0002 and P0151 overlap by 0.06 m2.,open
-QA-0021,overlap,high,True,P0002;P0163,,Spatial units P0002 and P0163 overlap by 0.27 m2.,open
-QA-0022,overlap,high,True,P0010;P0179,,Spatial units P0010 and P0179 overlap by 0.22 m2.,open
-QA-0023,overlap,high,True,P0006;P0177,,Spatial units P0006 and P0177 overlap by 0.23 m2.,open
-QA-0024,overlap,high,True,P0008;P0228,,Spatial units P0008 and P0228 overlap by 0.45 m2.,open
-QA-0025,overlap,high,True,P0008;P0012,,Spatial units P0008 and P0012 overlap by 0.68 m2.,open
-QA-0026,overlap,high,True,P0009;P0151,,Spatial units P0009 and P0151 overlap by 0.65 m2.,open
-QA-0027,overlap,high,True,P0016;P0023,,Spatial units P0016 and P0023 overlap by 1.94 m2.,open
-QA-0028,overlap,high,True,P0024;P0228,,Spatial units P0024 and P0228 overlap by 1.37 m2.,open
-QA-0029,overlap,high,True,P0025;P0026,,Spatial units P0025 and P0026 overlap by 1.67 m2.,open
-QA-0030,overlap,high,True,P0027;P0165,,Spatial units P0027 and P0165 overlap by 0.34 m2.,open
-QA-0031,overlap,high,True,P0029;P0030,,Spatial units P0029 and P0030 overlap by 0.59 m2.,open
-QA-0032,overlap,high,True,P0029;P0180,,Spatial units P0029 and P0180 overlap by 0.53 m2.,open
-QA-0033,overlap,high,True,P0030;P0181,,Spatial units P0030 and P0181 overlap by 0.05 m2.,open
-QA-0034,overlap,high,True,P0030;P0031,,Spatial units P0030 and P0031 overlap by 0.19 m2.,open
-QA-0035,overlap,high,True,P0031;P0180,,Spatial units P0031 and P0180 overlap by 2.21 m2.,open
-QA-0036,overlap,high,True,P0031;P0032,,Spatial units P0031 and P0032 overlap by 0.09 m2.,open
-QA-0037,overlap,high,True,P0033;P0043,,Spatial units P0033 and P0043 overlap by 0.08 m2.,open
-QA-0038,overlap,high,True,P0033;P0143,,Spatial units P0033 and P0143 overlap by 0.47 m2.,open
-QA-0039,overlap,high,True,P0035;P0230,,Spatial units P0035 and P0230 overlap by 0.12 m2.,open
-QA-0040,overlap,high,True,P0044;P0050,,Spatial units P0044 and P0050 overlap by 0.49 m2.,open
-QA-0041,overlap,high,True,P0044;P0064,,Spatial units P0044 and P0064 overlap by 0.06 m2.,open
-QA-0042,overlap,high,True,P0050;P0071,,Spatial units P0050 and P0071 overlap by 0.08 m2.,open
-QA-0043,overlap,high,True,P0050;P0173,,Spatial units P0050 and P0173 overlap by 0.65 m2.,open
-QA-0044,overlap,high,True,P0064;P0173,,Spatial units P0064 and P0173 overlap by 0.63 m2.,open
-QA-0045,overlap,high,True,P0065;P0146,,Spatial units P0065 and P0146 overlap by 0.87 m2.,open
-QA-0046,overlap,high,True,P0066;P0141,,Spatial units P0066 and P0141 overlap by 0.50 m2.,open
-QA-0047,overlap,high,True,P0078;P0146,,Spatial units P0078 and P0146 overlap by 0.13 m2.,open
-QA-0048,overlap,high,True,P0078;P0158,,Spatial units P0078 and P0158 overlap by 0.06 m2.,open
-QA-0049,overlap,high,True,P0081;P0201,,Spatial units P0081 and P0201 overlap by 0.20 m2.,open
-QA-0050,overlap,high,True,P0081;P0148,,Spatial units P0081 and P0148 overlap by 0.22 m2.,open
-QA-0051,overlap,high,True,P0081;P0226,,Spatial units P0081 and P0226 overlap by 0.90 m2.,open
-QA-0052,overlap,high,True,P0088;P0147,,Spatial units P0088 and P0147 overlap by 4.14 m2.,open
-QA-0053,overlap,high,True,P0091;P0174,,Spatial units P0091 and P0174 overlap by 0.33 m2.,open
-QA-0054,overlap,high,True,P0096;P0142,,Spatial units P0096 and P0142 overlap by 0.69 m2.,open
-QA-0055,overlap,high,True,P0104;P0216,,Spatial units P0104 and P0216 overlap by 1.47 m2.,open
-QA-0056,overlap,high,True,P0108;P0149,,Spatial units P0108 and P0149 overlap by 0.07 m2.,open
-QA-0057,overlap,high,True,P0109;P0124,,Spatial units P0109 and P0124 overlap by 0.34 m2.,open
-QA-0058,overlap,high,True,P0110;P0225,,Spatial units P0110 and P0225 overlap by 0.63 m2.,open
-QA-0059,overlap,high,True,P0116;P0153,,Spatial units P0116 and P0153 overlap by 0.13 m2.,open
-QA-0060,overlap,high,True,P0117;P0121,,Spatial units P0117 and P0121 overlap by 0.28 m2.,open
-QA-0061,overlap,high,True,P0117;P0150,,Spatial units P0117 and P0150 overlap by 0.45 m2.,open
-QA-0062,overlap,high,True,P0120;P0225,,Spatial units P0120 and P0225 overlap by 0.58 m2.,open
-QA-0063,overlap,high,True,P0126;P0214,,Spatial units P0126 and P0214 overlap by 2.42 m2.,open
-QA-0064,overlap,high,True,P0138;P0231,,Spatial units P0138 and P0231 overlap by 5.70 m2.,open
-QA-0065,overlap,high,True,P0140;P0204,,Spatial units P0140 and P0204 overlap by 0.11 m2.,open
-QA-0066,overlap,high,True,P0140;P0203,,Spatial units P0140 and P0203 overlap by 0.37 m2.,open
-QA-0067,overlap,high,True,P0142;P0204,,Spatial units P0142 and P0204 overlap by 0.45 m2.,open
-QA-0068,overlap,high,True,P0164;P0209,,Spatial units P0164 and P0209 overlap by 0.29 m2.,open
-QA-0069,overlap,high,True,P0172;P0220,,Spatial units P0172 and P0220 overlap by 0.11 m2.,open
-QA-0070,overlap,high,True,P0173;P0174,,Spatial units P0173 and P0174 overlap by 0.80 m2.,open
-QA-0071,overlap,high,True,P0184;P0185,,Spatial units P0184 and P0185 overlap by 0.52 m2.,open
-QA-0072,overlap,high,True,P0186;P0189,,Spatial units P0186 and P0189 overlap by 0.65 m2.,open
-QA-0073,overlap,high,True,P0186;P0195,,Spatial units P0186 and P0195 overlap by 0.34 m2.,open
-QA-0074,overlap,high,True,P0189;P0190,,Spatial units P0189 and P0190 overlap by 1.66 m2.,open
-QA-0075,overlap,high,True,P0194;P0195,,Spatial units P0194 and P0195 overlap by 0.58 m2.,open
-QA-0076,overlap,high,True,P0213;P0219,,Spatial units P0213 and P0219 overlap by 0.34 m2.,open
-QA-0077,overlap,high,True,P0214;P0219,,Spatial units P0214 and P0219 overlap by 0.06 m2.,open
-QA-0078,boundary_conflict,medium,True,P0114;P0120,,"Spatial units P0114 and P0120 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0079,boundary_conflict,medium,True,P0114;P0111,,"Spatial units P0114 and P0111 are only 0.09 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0080,boundary_conflict,medium,True,P0183;P0110,,"Spatial units P0183 and P0110 are only 0.28 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0081,boundary_conflict,medium,True,P0159;P0184,,"Spatial units P0159 and P0184 are only 0.09 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0082,boundary_conflict,medium,True,P0069;P0056,,"Spatial units P0069 and P0056 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0083,boundary_conflict,medium,True,P0223;P0219,,"Spatial units P0223 and P0219 are only 0.10 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0084,boundary_conflict,medium,True,P0222;P0211,,"Spatial units P0222 and P0211 are only 0.21 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0085,boundary_conflict,medium,True,P0122;P0217,,"Spatial units P0122 and P0217 are only 0.09 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0086,boundary_conflict,medium,True,P0118;P0124,,"Spatial units P0118 and P0124 are only 0.40 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0087,boundary_conflict,medium,True,P0072;P0226,,"Spatial units P0072 and P0226 are only 0.08 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0088,boundary_conflict,medium,True,P0095;P0074,,"Spatial units P0095 and P0074 are only 0.27 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0089,boundary_conflict,medium,True,P0049;P0140,,"Spatial units P0049 and P0140 are only 0.37 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0090,boundary_conflict,medium,True,P0049;P0096,,"Spatial units P0049 and P0096 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0091,boundary_conflict,medium,True,P0049;P0104,,"Spatial units P0049 and P0104 are only 0.26 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0092,boundary_conflict,medium,True,P0085;P0198,,"Spatial units P0085 and P0198 are only 0.21 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0093,boundary_conflict,medium,True,P0191;P0190,,"Spatial units P0191 and P0190 are only 0.06 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0094,boundary_conflict,medium,True,P0191;P0194,,"Spatial units P0191 and P0194 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0095,boundary_conflict,medium,True,P0079;P0090,,"Spatial units P0079 and P0090 are only 0.02 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0096,boundary_conflict,medium,True,P0079;P0053,,"Spatial units P0079 and P0053 are only 0.07 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0097,boundary_conflict,medium,True,P0079;P0144,,"Spatial units P0079 and P0144 are only 0.22 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0098,boundary_conflict,medium,True,P0192;P0193,,"Spatial units P0192 and P0193 are only 0.39 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0099,boundary_conflict,medium,True,P0192;P0195,,"Spatial units P0192 and P0195 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0100,boundary_conflict,medium,True,P0170;P0169,,"Spatial units P0170 and P0169 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0101,boundary_conflict,medium,True,P0098;P0097,,"Spatial units P0098 and P0097 are only 0.10 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0102,boundary_conflict,medium,True,P0077;P0042,,"Spatial units P0077 and P0042 are only 0.21 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0103,boundary_conflict,medium,True,P0055;P0044,,"Spatial units P0055 and P0044 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0104,boundary_conflict,medium,True,P0055;P0078,,"Spatial units P0055 and P0078 are only 0.37 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0105,boundary_conflict,medium,True,P0039;P0231,,"Spatial units P0039 and P0231 are only 0.16 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0106,boundary_conflict,medium,True,P0101;P0022,,"Spatial units P0101 and P0022 are only 0.13 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0107,boundary_conflict,medium,True,P0022;P0175,,"Spatial units P0022 and P0175 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0108,boundary_conflict,medium,True,P0001;P0209,,"Spatial units P0001 and P0209 are only 0.37 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0109,boundary_conflict,medium,True,P0011;P0024,,"Spatial units P0011 and P0024 are only 0.35 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0110,boundary_conflict,medium,True,P0015;P0009,,"Spatial units P0015 and P0009 are only 0.17 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0111,boundary_conflict,medium,True,P0129;P0134,,"Spatial units P0129 and P0134 are only 0.39 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0112,boundary_conflict,medium,True,P0004;P0024,,"Spatial units P0004 and P0024 are only 0.35 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0113,boundary_conflict,medium,True,P0028;P0181,,"Spatial units P0028 and P0181 are only 0.29 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0114,boundary_conflict,medium,True,P0028;P0030,,"Spatial units P0028 and P0030 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0115,boundary_conflict,medium,True,P0003;P0006,,"Spatial units P0003 and P0006 are only 0.07 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0116,boundary_conflict,medium,True,P0021;P0019,,"Spatial units P0021 and P0019 are only 0.48 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0117,boundary_conflict,medium,True,P0037;P0012,,"Spatial units P0037 and P0012 are only 0.03 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0118,boundary_conflict,medium,True,P0037;P0043,,"Spatial units P0037 and P0043 are only 0.28 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0119,boundary_conflict,medium,True,P0131;P0206,,"Spatial units P0131 and P0206 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0120,boundary_conflict,medium,True,P0134;P0127,,"Spatial units P0134 and P0127 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0121,boundary_conflict,medium,True,P0012;P0228,,"Spatial units P0012 and P0228 are only 0.24 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0122,boundary_conflict,medium,True,P0013;P0014,,"Spatial units P0013 and P0014 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0123,boundary_conflict,medium,True,P0013;P0017,,"Spatial units P0013 and P0017 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0124,boundary_conflict,medium,True,P0020;P0176,,"Spatial units P0020 and P0176 are only 0.48 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0125,boundary_conflict,medium,True,P0030;P0180,,"Spatial units P0030 and P0180 are only 0.10 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0126,boundary_conflict,medium,True,P0032;P0084,,"Spatial units P0032 and P0084 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0127,boundary_conflict,medium,True,P0035;P0106,,"Spatial units P0035 and P0106 are only 0.14 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0128,boundary_conflict,medium,True,P0035;P0137,,"Spatial units P0035 and P0137 are only 0.17 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0129,boundary_conflict,medium,True,P0040;P0060,,"Spatial units P0040 and P0060 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0130,boundary_conflict,medium,True,P0041;P0231,,"Spatial units P0041 and P0231 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0131,boundary_conflict,medium,True,P0042;P0143,,"Spatial units P0042 and P0143 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0132,boundary_conflict,medium,True,P0042;P0099,,"Spatial units P0042 and P0099 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0133,boundary_conflict,medium,True,P0044;P0173,,"Spatial units P0044 and P0173 are only 0.08 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0134,boundary_conflict,medium,True,P0045;P0220,,"Spatial units P0045 and P0220 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0135,boundary_conflict,medium,True,P0047;P0197,,"Spatial units P0047 and P0197 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0136,boundary_conflict,medium,True,P0047;P0063,,"Spatial units P0047 and P0063 are only 0.01 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0137,boundary_conflict,medium,True,P0050;P0084,,"Spatial units P0050 and P0084 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0138,boundary_conflict,medium,True,P0054;P0175,,"Spatial units P0054 and P0175 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0139,boundary_conflict,medium,True,P0057;P0092,,"Spatial units P0057 and P0092 are only 0.14 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0140,boundary_conflict,medium,True,P0057;P0059,,"Spatial units P0057 and P0059 are only 0.13 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0141,boundary_conflict,medium,True,P0060;P0220,,"Spatial units P0060 and P0220 are only 0.29 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0142,boundary_conflict,medium,True,P0065;P0102,,"Spatial units P0065 and P0102 are only 0.11 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0143,boundary_conflict,medium,True,P0066;P0204,,"Spatial units P0066 and P0204 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0144,boundary_conflict,medium,True,P0066;P0203,,"Spatial units P0066 and P0203 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0145,boundary_conflict,medium,True,P0066;P0140,,"Spatial units P0066 and P0140 are only 0.41 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0146,boundary_conflict,medium,True,P0074;P0229,,"Spatial units P0074 and P0229 are only 0.03 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0147,boundary_conflict,medium,True,P0074;P0083,,"Spatial units P0074 and P0083 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0148,boundary_conflict,medium,True,P0076;P0198,,"Spatial units P0076 and P0198 are only 0.01 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0149,boundary_conflict,medium,True,P0082;P0091,,"Spatial units P0082 and P0091 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0150,boundary_conflict,medium,True,P0089;P0096,,"Spatial units P0089 and P0096 are only 0.30 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0151,boundary_conflict,medium,True,P0105;P0216,,"Spatial units P0105 and P0216 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0152,boundary_conflict,medium,True,P0105;P0107,,"Spatial units P0105 and P0107 are only 0.06 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0153,boundary_conflict,medium,True,P0109;P0121,,"Spatial units P0109 and P0121 are only 0.20 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0154,boundary_conflict,medium,True,P0117;P0149,,"Spatial units P0117 and P0149 are only 0.30 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0155,boundary_conflict,medium,True,P0124;P0150,,"Spatial units P0124 and P0150 are only 0.24 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0156,boundary_conflict,medium,True,P0126;P0225,,"Spatial units P0126 and P0225 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0157,boundary_conflict,medium,True,P0136;P0138,,"Spatial units P0136 and P0138 are only 0.35 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0158,boundary_conflict,medium,True,P0136;P0137,,"Spatial units P0136 and P0137 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0159,boundary_conflict,medium,True,P0148;P0201,,"Spatial units P0148 and P0201 are only 0.41 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0160,boundary_conflict,medium,True,P0151;P0165,,"Spatial units P0151 and P0165 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0161,boundary_conflict,medium,True,P0197;P0199,,"Spatial units P0197 and P0199 are only 0.06 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
-QA-0162,duplicate_claim,high,True,P0006,SYN-HH-0006;SYN-HH-0007,"Spatial unit P0006 has 2 competing claims (STR-0081, STR-0082) from different households -- needs adjudication.",open
-QA-0163,duplicate_claim,high,True,P0012,SYN-HH-0013;SYN-HH-0014,"Spatial unit P0012 has 2 competing claims (STR-0085, STR-0086) from different households -- needs adjudication.",open
-QA-0164,duplicate_claim,high,True,P0016,SYN-HH-0018;SYN-HH-0019,"Spatial unit P0016 has 2 competing claims (STR-0089, STR-0090) from different households -- needs adjudication.",open
-QA-0165,duplicate_claim,high,True,P0021,SYN-HH-0024;SYN-HH-0025,"Spatial unit P0021 has 2 competing claims (STR-0070, STR-0071) from different households -- needs adjudication.",open
-QA-0166,duplicate_claim,high,True,P0024,SYN-HH-0028;SYN-HH-0029,"Spatial unit P0024 has 2 competing claims (STR-0094, STR-0095) from different households -- needs adjudication.",open
-QA-0167,duplicate_claim,high,True,P0031,SYN-HH-0036;SYN-HH-0037,"Spatial unit P0031 has 2 competing claims (STR-0101, STR-0102) from different households -- needs adjudication.",open
-QA-0168,duplicate_claim,high,True,P0035,SYN-HH-0041;SYN-HH-0042,"Spatial unit P0035 has 2 competing claims (STR-0106, STR-0107) from different households -- needs adjudication.",open
-QA-0169,duplicate_claim,high,True,P0043,SYN-HH-0050;SYN-HH-0051,"Spatial unit P0043 has 2 competing claims (STR-0111, STR-0112) from different households -- needs adjudication.",open
-QA-0170,duplicate_claim,high,True,P0044,SYN-HH-0052;SYN-HH-0053,"Spatial unit P0044 has 2 competing claims (STR-0113, STR-0114) from different households -- needs adjudication.",open
-QA-0171,duplicate_claim,high,True,P0050,SYN-HH-0059;SYN-HH-0060,"Spatial unit P0050 has 2 competing claims (STR-0117, STR-0118) from different households -- needs adjudication.",open
-QA-0172,duplicate_claim,high,True,P0056,SYN-HH-0066;SYN-HH-0067,"Spatial unit P0056 has 2 competing claims (STR-0122, STR-0123) from different households -- needs adjudication.",open
-QA-0173,duplicate_claim,high,True,P0060,SYN-HH-0071;SYN-HH-0072,"Spatial unit P0060 has 2 competing claims (STR-0126, STR-0127) from different households -- needs adjudication.",open
-QA-0174,duplicate_claim,high,True,P0066,SYN-HH-0078;SYN-HH-0079,"Spatial unit P0066 has 2 competing claims (STR-0132, STR-0133) from different households -- needs adjudication.",open
-QA-0175,duplicate_claim,high,True,P0078,SYN-HH-0091;SYN-HH-0092,"Spatial unit P0078 has 2 competing claims (STR-0139, STR-0140) from different households -- needs adjudication.",open
-QA-0176,duplicate_claim,high,True,P0081,SYN-HH-0095;SYN-HH-0096,"Spatial unit P0081 has 2 competing claims (STR-0141, STR-0142) from different households -- needs adjudication.",open
-QA-0177,duplicate_claim,high,True,P0083,SYN-HH-0098;SYN-HH-0099,"Spatial unit P0083 has 2 competing claims (STR-0144, STR-0145) from different households -- needs adjudication.",open
-QA-0178,duplicate_claim,high,True,P0085,SYN-HH-0101;SYN-HH-0102,"Spatial unit P0085 has 2 competing claims (STR-0034, STR-0035) from different households -- needs adjudication.",open
-QA-0179,duplicate_claim,high,True,P0086,SYN-HH-0103;SYN-HH-0104,"Spatial unit P0086 has 2 competing claims (STR-0147, STR-0148) from different households -- needs adjudication.",open
-QA-0180,duplicate_claim,high,True,P0089,SYN-HH-0107;SYN-HH-0108,"Spatial unit P0089 has 2 competing claims (STR-0150, STR-0151) from different households -- needs adjudication.",open
-QA-0181,duplicate_claim,high,True,P0092,SYN-HH-0111;SYN-HH-0112,"Spatial unit P0092 has 2 competing claims (STR-0154, STR-0155) from different households -- needs adjudication.",open
-QA-0182,duplicate_claim,high,True,P0096,SYN-HH-0116;SYN-HH-0117,"Spatial unit P0096 has 2 competing claims (STR-0156, STR-0157) from different households -- needs adjudication.",open
-QA-0183,duplicate_claim,high,True,P0113,SYN-HH-0134;SYN-HH-0135,"Spatial unit P0113 has 2 competing claims (STR-0168, STR-0169) from different households -- needs adjudication.",open
-QA-0184,duplicate_claim,high,True,P0118,SYN-HH-0140;SYN-HH-0141,"Spatial unit P0118 has 2 competing claims (STR-0014, STR-0015) from different households -- needs adjudication.",open
-QA-0185,duplicate_claim,high,True,P0135,SYN-HH-0158;SYN-HH-0159,"Spatial unit P0135 has 2 competing claims (STR-0052, STR-0053) from different households -- needs adjudication.",open
-QA-0186,duplicate_claim,high,True,P0139,SYN-HH-0163;SYN-HH-0164,"Spatial unit P0139 has 2 competing claims (STR-0185, STR-0186) from different households -- needs adjudication.",open
-QA-0187,duplicate_claim,high,True,P0144,SYN-HH-0169;SYN-HH-0170,"Spatial unit P0144 has 2 competing claims (STR-0191, STR-0192) from different households -- needs adjudication.",open
-QA-0188,duplicate_claim,high,True,P0147,SYN-HH-0173;SYN-HH-0174,"Spatial unit P0147 has 2 competing claims (STR-0195, STR-0196) from different households -- needs adjudication.",open
-QA-0189,duplicate_claim,high,True,P0148,SYN-HH-0175;SYN-HH-0176,"Spatial unit P0148 has 2 competing claims (STR-0197, STR-0198) from different households -- needs adjudication.",open
-QA-0190,duplicate_claim,high,True,P0156,SYN-HH-0184;SYN-HH-0185,"Spatial unit P0156 has 2 competing claims (STR-0019, STR-0020) from different households -- needs adjudication.",open
-QA-0191,duplicate_claim,high,True,P0191,SYN-HH-0220;SYN-HH-0221,"Spatial unit P0191 has 2 competing claims (STR-0036, STR-0037) from different households -- needs adjudication.",open
-QA-0192,duplicate_claim,high,True,P0215,SYN-HH-0245;SYN-HH-0246,"Spatial unit P0215 has 2 competing claims (STR-0021, STR-0022) from different households -- needs adjudication.",open
-QA-0193,duplicate_claim,high,True,P0217,SYN-HH-0248;SYN-HH-0249,"Spatial unit P0217 has 2 competing claims (STR-0251, STR-0252) from different households -- needs adjudication.",open
-QA-0194,duplicate_claim,high,True,P0223,SYN-HH-0255;SYN-HH-0256,"Spatial unit P0223 has 2 competing claims (STR-0009, STR-0010) from different households -- needs adjudication.",open
-QA-0195,duplicate_claim,high,True,P0224,SYN-HH-0257;SYN-HH-0258,"Spatial unit P0224 has 2 competing claims (STR-0257, STR-0258) from different households -- needs adjudication.",open
-QA-0196,duplicate_claim,high,True,P0225,SYN-HH-0259;SYN-HH-0260,"Spatial unit P0225 has 2 competing claims (STR-0259, STR-0260) from different households -- needs adjudication.",open
-QA-0197,duplicate_claim,high,True,P0226,SYN-HH-0261;SYN-HH-0262,"Spatial unit P0226 has 2 competing claims (STR-0261, STR-0262) from different households -- needs adjudication.",open
+QA-0001,overlap,high,True,P0465;P0209,,Spatial units P0465 and P0209 overlap by 0.10 m2.,open
+QA-0002,overlap,high,True,P0011;P0073,,Spatial units P0011 and P0073 overlap by 0.09 m2.,open
+QA-0003,overlap,high,True,P0069;P0477,,Spatial units P0069 and P0477 overlap by 0.14 m2.,open
+QA-0004,overlap,high,True,P0039;P0041,,Spatial units P0039 and P0041 overlap by 0.25 m2.,open
+QA-0005,overlap,high,True,P0406;P0408,,Spatial units P0406 and P0408 overlap by 0.22 m2.,open
+QA-0006,overlap,high,True,P0378;P0333,,Spatial units P0378 and P0333 overlap by 0.30 m2.,open
+QA-0007,overlap,high,True,P0309;P0270,,Spatial units P0309 and P0270 overlap by 0.11 m2.,open
+QA-0008,overlap,high,True,P0083;P0173,,Spatial units P0083 and P0173 overlap by 0.07 m2.,open
+QA-0009,overlap,high,True,P0101;P0124,,Spatial units P0101 and P0124 overlap by 0.54 m2.,open
+QA-0010,overlap,high,True,P0115;P0446,,Spatial units P0115 and P0446 overlap by 0.05 m2.,open
+QA-0011,overlap,high,True,P0131;P0411,,Spatial units P0131 and P0411 overlap by 0.05 m2.,open
+QA-0012,overlap,high,True,P0133;P0308,,Spatial units P0133 and P0308 overlap by 0.20 m2.,open
+QA-0013,overlap,high,True,P0143;P0266,,Spatial units P0143 and P0266 overlap by 0.10 m2.,open
+QA-0014,overlap,high,True,P0147;P0435,,Spatial units P0147 and P0435 overlap by 0.13 m2.,open
+QA-0015,overlap,high,True,P0167;P0314,,Spatial units P0167 and P0314 overlap by 0.12 m2.,open
+QA-0016,overlap,high,True,P0258;P0449,,Spatial units P0258 and P0449 overlap by 0.41 m2.,open
+QA-0017,overlap,high,True,P0265;P0294,,Spatial units P0265 and P0294 overlap by 0.06 m2.,open
+QA-0018,overlap,high,True,P0272;P0335,,Spatial units P0272 and P0335 overlap by 0.76 m2.,open
+QA-0019,overlap,high,True,P0287;P0435,,Spatial units P0287 and P0435 overlap by 0.17 m2.,open
+QA-0020,overlap,high,True,P0317;P0319,,Spatial units P0317 and P0319 overlap by 0.19 m2.,open
+QA-0021,overlap,high,True,P0320;P0366,,Spatial units P0320 and P0366 overlap by 0.09 m2.,open
+QA-0022,overlap,high,True,P0348;P0394,,Spatial units P0348 and P0394 overlap by 0.17 m2.,open
+QA-0023,boundary_conflict,medium,True,P0008;P0005,,"Spatial units P0008 and P0005 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0024,boundary_conflict,medium,True,P0166;P0419,,"Spatial units P0166 and P0419 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0025,boundary_conflict,medium,True,P0465;P0134,,"Spatial units P0465 and P0134 are only 0.08 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0026,boundary_conflict,medium,True,P0465;P0212,,"Spatial units P0465 and P0212 are only 0.40 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0027,boundary_conflict,medium,True,P0011;P0077,,"Spatial units P0011 and P0077 are only 0.20 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0028,boundary_conflict,medium,True,P0084;P0085,,"Spatial units P0084 and P0085 are only 0.44 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0029,boundary_conflict,medium,True,P0424;P0355,,"Spatial units P0424 and P0355 are only 0.26 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0030,boundary_conflict,medium,True,P0424;P0155,,"Spatial units P0424 and P0155 are only 0.25 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0031,boundary_conflict,medium,True,P0424;P0159,,"Spatial units P0424 and P0159 are only 0.14 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0032,boundary_conflict,medium,True,P0424;P0158,,"Spatial units P0424 and P0158 are only 0.02 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0033,boundary_conflict,medium,True,P0037;P0036,,"Spatial units P0037 and P0036 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0034,boundary_conflict,medium,True,P0013;P0160,,"Spatial units P0013 and P0160 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0035,boundary_conflict,medium,True,P0354;P0279,,"Spatial units P0354 and P0279 are only 0.24 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0036,boundary_conflict,medium,True,P0354;P0276,,"Spatial units P0354 and P0276 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0037,boundary_conflict,medium,True,P0354;P0388,,"Spatial units P0354 and P0388 are only 0.09 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0038,boundary_conflict,medium,True,P0069;P0154,,"Spatial units P0069 and P0154 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0039,boundary_conflict,medium,True,P0453;P0316,,"Spatial units P0453 and P0316 are only 0.39 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0040,boundary_conflict,medium,True,P0425;P0020,,"Spatial units P0425 and P0020 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0041,boundary_conflict,medium,True,P0233;P0067,,"Spatial units P0233 and P0067 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0042,boundary_conflict,medium,True,P0324;P0376,,"Spatial units P0324 and P0376 are only 0.41 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0043,boundary_conflict,medium,True,P0378;P0224,,"Spatial units P0378 and P0224 are only 0.50 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0044,boundary_conflict,medium,True,P0303;P0319,,"Spatial units P0303 and P0319 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0045,boundary_conflict,medium,True,P0298;P0351,,"Spatial units P0298 and P0351 are only 0.26 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0046,boundary_conflict,medium,True,P0298;P0297,,"Spatial units P0298 and P0297 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0047,boundary_conflict,medium,True,P0297;P0351,,"Spatial units P0297 and P0351 are only 0.09 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0048,boundary_conflict,medium,True,P0064;P0462,,"Spatial units P0064 and P0462 are only 0.25 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0049,boundary_conflict,medium,True,P0064;P0461,,"Spatial units P0064 and P0461 are only 0.07 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0050,boundary_conflict,medium,True,P0360;P0400,,"Spatial units P0360 and P0400 are only 0.25 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0051,boundary_conflict,medium,True,P0356;P0459,,"Spatial units P0356 and P0459 are only 0.26 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0052,boundary_conflict,medium,True,P0217;P0218,,"Spatial units P0217 and P0218 are only 0.43 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0053,boundary_conflict,medium,True,P0059;P0463,,"Spatial units P0059 and P0463 are only 0.36 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0054,boundary_conflict,medium,True,P0059;P0464,,"Spatial units P0059 and P0464 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0055,boundary_conflict,medium,True,P0059;P0396,,"Spatial units P0059 and P0396 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0056,boundary_conflict,medium,True,P0001;P0322,,"Spatial units P0001 and P0322 are only 0.44 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0057,boundary_conflict,medium,True,P0002;P0322,,"Spatial units P0002 and P0322 are only 0.16 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0058,boundary_conflict,medium,True,P0004;P0321,,"Spatial units P0004 and P0321 are only 0.48 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0059,boundary_conflict,medium,True,P0005;P0260,,"Spatial units P0005 and P0260 are only 0.46 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0060,boundary_conflict,medium,True,P0007;P0441,,"Spatial units P0007 and P0441 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0061,boundary_conflict,medium,True,P0017;P0336,,"Spatial units P0017 and P0336 are only 0.25 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0062,boundary_conflict,medium,True,P0020;P0380,,"Spatial units P0020 and P0380 are only 0.20 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0063,boundary_conflict,medium,True,P0022;P0470,,"Spatial units P0022 and P0470 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0064,boundary_conflict,medium,True,P0023;P0060,,"Spatial units P0023 and P0060 are only 0.50 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0065,boundary_conflict,medium,True,P0023;P0288,,"Spatial units P0023 and P0288 are only 0.27 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0066,boundary_conflict,medium,True,P0025;P0341,,"Spatial units P0025 and P0341 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0067,boundary_conflict,medium,True,P0026;P0341,,"Spatial units P0026 and P0341 are only 0.50 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0068,boundary_conflict,medium,True,P0026;P0382,,"Spatial units P0026 and P0382 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0069,boundary_conflict,medium,True,P0027;P0349,,"Spatial units P0027 and P0349 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0070,boundary_conflict,medium,True,P0028;P0350,,"Spatial units P0028 and P0350 are only 0.28 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0071,boundary_conflict,medium,True,P0028;P0337,,"Spatial units P0028 and P0337 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0072,boundary_conflict,medium,True,P0030;P0325,,"Spatial units P0030 and P0325 are only 0.48 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0073,boundary_conflict,medium,True,P0031;P0323,,"Spatial units P0031 and P0323 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0074,boundary_conflict,medium,True,P0032;P0336,,"Spatial units P0032 and P0336 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0075,boundary_conflict,medium,True,P0033;P0034,,"Spatial units P0033 and P0034 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0076,boundary_conflict,medium,True,P0034;P0091,,"Spatial units P0034 and P0091 are only 0.37 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0077,boundary_conflict,medium,True,P0035;P0040,,"Spatial units P0035 and P0040 are only 0.18 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0078,boundary_conflict,medium,True,P0036;P0398,,"Spatial units P0036 and P0398 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0079,boundary_conflict,medium,True,P0038;P0398,,"Spatial units P0038 and P0398 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0080,boundary_conflict,medium,True,P0041;P0300,,"Spatial units P0041 and P0300 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0081,boundary_conflict,medium,True,P0042;P0086,,"Spatial units P0042 and P0086 are only 0.46 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0082,boundary_conflict,medium,True,P0042;P0085,,"Spatial units P0042 and P0085 are only 0.11 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0083,boundary_conflict,medium,True,P0045;P0466,,"Spatial units P0045 and P0466 are only 0.16 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0084,boundary_conflict,medium,True,P0048;P0050,,"Spatial units P0048 and P0050 are only 0.36 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0085,boundary_conflict,medium,True,P0049;P0286,,"Spatial units P0049 and P0286 are only 0.41 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0086,boundary_conflict,medium,True,P0050;P0232,,"Spatial units P0050 and P0232 are only 0.24 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0087,boundary_conflict,medium,True,P0052;P0054,,"Spatial units P0052 and P0054 are only 0.00 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0088,boundary_conflict,medium,True,P0057;P0373,,"Spatial units P0057 and P0373 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0089,boundary_conflict,medium,True,P0060;P0288,,"Spatial units P0060 and P0288 are only 0.10 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0090,boundary_conflict,medium,True,P0065;P0462,,"Spatial units P0065 and P0462 are only 0.44 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0091,boundary_conflict,medium,True,P0065;P0463,,"Spatial units P0065 and P0463 are only 0.22 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0092,boundary_conflict,medium,True,P0065;P0357,,"Spatial units P0065 and P0357 are only 0.43 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0093,boundary_conflict,medium,True,P0072;P0265,,"Spatial units P0072 and P0265 are only 0.17 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0094,boundary_conflict,medium,True,P0072;P0077,,"Spatial units P0072 and P0077 are only 0.22 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0095,boundary_conflict,medium,True,P0072;P0294,,"Spatial units P0072 and P0294 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0096,boundary_conflict,medium,True,P0073;P0439,,"Spatial units P0073 and P0439 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0097,boundary_conflict,medium,True,P0079;P0247,,"Spatial units P0079 and P0247 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0098,boundary_conflict,medium,True,P0083;P0273,,"Spatial units P0083 and P0273 are only 0.43 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0099,boundary_conflict,medium,True,P0087;P0089,,"Spatial units P0087 and P0089 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0100,boundary_conflict,medium,True,P0089;P0283,,"Spatial units P0089 and P0283 are only 0.18 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0101,boundary_conflict,medium,True,P0090;P0129,,"Spatial units P0090 and P0129 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0102,boundary_conflict,medium,True,P0096;P0353,,"Spatial units P0096 and P0353 are only 0.50 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0103,boundary_conflict,medium,True,P0096;P0416,,"Spatial units P0096 and P0416 are only 0.27 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0104,boundary_conflict,medium,True,P0096;P0268,,"Spatial units P0096 and P0268 are only 0.40 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0105,boundary_conflict,medium,True,P0097;P0120,,"Spatial units P0097 and P0120 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0106,boundary_conflict,medium,True,P0098;P0113,,"Spatial units P0098 and P0113 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0107,boundary_conflict,medium,True,P0100;P0331,,"Spatial units P0100 and P0331 are only 0.46 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0108,boundary_conflict,medium,True,P0101;P0123,,"Spatial units P0101 and P0123 are only 0.44 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0109,boundary_conflict,medium,True,P0101;P0196,,"Spatial units P0101 and P0196 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0110,boundary_conflict,medium,True,P0102;P0104,,"Spatial units P0102 and P0104 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0111,boundary_conflict,medium,True,P0102;P0124,,"Spatial units P0102 and P0124 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0112,boundary_conflict,medium,True,P0103;P0125,,"Spatial units P0103 and P0125 are only 0.41 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0113,boundary_conflict,medium,True,P0105;P0366,,"Spatial units P0105 and P0366 are only 0.46 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0114,boundary_conflict,medium,True,P0106;P0183,,"Spatial units P0106 and P0183 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0115,boundary_conflict,medium,True,P0107;P0126,,"Spatial units P0107 and P0126 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0116,boundary_conflict,medium,True,P0108;P0415,,"Spatial units P0108 and P0415 are only 0.21 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0117,boundary_conflict,medium,True,P0109;P0127,,"Spatial units P0109 and P0127 are only 0.18 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0118,boundary_conflict,medium,True,P0110;P0127,,"Spatial units P0110 and P0127 are only 0.13 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0119,boundary_conflict,medium,True,P0111;P0445,,"Spatial units P0111 and P0445 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0120,boundary_conflict,medium,True,P0111;P0114,,"Spatial units P0111 and P0114 are only 0.24 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0121,boundary_conflict,medium,True,P0114;P0411,,"Spatial units P0114 and P0411 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0122,boundary_conflict,medium,True,P0114;P0115,,"Spatial units P0114 and P0115 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0123,boundary_conflict,medium,True,P0114;P0259,,"Spatial units P0114 and P0259 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0124,boundary_conflict,medium,True,P0114;P0130,,"Spatial units P0114 and P0130 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0125,boundary_conflict,medium,True,P0114;P0267,,"Spatial units P0114 and P0267 are only 0.16 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0126,boundary_conflict,medium,True,P0115;P0411,,"Spatial units P0115 and P0411 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0127,boundary_conflict,medium,True,P0116;P0332,,"Spatial units P0116 and P0332 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0128,boundary_conflict,medium,True,P0116;P0445,,"Spatial units P0116 and P0445 are only 0.27 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0129,boundary_conflict,medium,True,P0117;P0332,,"Spatial units P0117 and P0332 are only 0.11 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0130,boundary_conflict,medium,True,P0117;P0132,,"Spatial units P0117 and P0132 are only 0.28 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0131,boundary_conflict,medium,True,P0118;P0151,,"Spatial units P0118 and P0151 are only 0.43 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0132,boundary_conflict,medium,True,P0126;P0415,,"Spatial units P0126 and P0415 are only 0.50 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0133,boundary_conflict,medium,True,P0127;P0289,,"Spatial units P0127 and P0289 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0134,boundary_conflict,medium,True,P0131;P0444,,"Spatial units P0131 and P0444 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0135,boundary_conflict,medium,True,P0131;P0276,,"Spatial units P0131 and P0276 are only 0.18 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0136,boundary_conflict,medium,True,P0134;P0478,,"Spatial units P0134 and P0478 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0137,boundary_conflict,medium,True,P0141;P0205,,"Spatial units P0141 and P0205 are only 0.25 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0138,boundary_conflict,medium,True,P0142;P0334,,"Spatial units P0142 and P0334 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0139,boundary_conflict,medium,True,P0142;P0148,,"Spatial units P0142 and P0148 are only 0.02 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0140,boundary_conflict,medium,True,P0142;P0435,,"Spatial units P0142 and P0435 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0141,boundary_conflict,medium,True,P0142;P0146,,"Spatial units P0142 and P0146 are only 0.11 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0142,boundary_conflict,medium,True,P0142;P0145,,"Spatial units P0142 and P0145 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0143,boundary_conflict,medium,True,P0142;P0143,,"Spatial units P0142 and P0143 are only 0.39 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0144,boundary_conflict,medium,True,P0143;P0146,,"Spatial units P0143 and P0146 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0145,boundary_conflict,medium,True,P0143;P0145,,"Spatial units P0143 and P0145 are only 0.48 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0146,boundary_conflict,medium,True,P0143;P0204,,"Spatial units P0143 and P0204 are only 0.43 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0147,boundary_conflict,medium,True,P0146;P0148,,"Spatial units P0146 and P0148 are only 0.11 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0148,boundary_conflict,medium,True,P0147;P0287,,"Spatial units P0147 and P0287 are only 0.11 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0149,boundary_conflict,medium,True,P0148;P0435,,"Spatial units P0148 and P0435 are only 0.37 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0150,boundary_conflict,medium,True,P0149;P0287,,"Spatial units P0149 and P0287 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0151,boundary_conflict,medium,True,P0151;P0404,,"Spatial units P0151 and P0404 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0152,boundary_conflict,medium,True,P0152;P0251,,"Spatial units P0152 and P0251 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0153,boundary_conflict,medium,True,P0153;P0157,,"Spatial units P0153 and P0157 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0154,boundary_conflict,medium,True,P0153;P0156,,"Spatial units P0153 and P0156 are only 0.30 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0155,boundary_conflict,medium,True,P0154;P0352,,"Spatial units P0154 and P0352 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0156,boundary_conflict,medium,True,P0155;P0157,,"Spatial units P0155 and P0157 are only 0.20 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0157,boundary_conflict,medium,True,P0157;P0158,,"Spatial units P0157 and P0158 are only 0.22 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0158,boundary_conflict,medium,True,P0167;P0310,,"Spatial units P0167 and P0310 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0159,boundary_conflict,medium,True,P0169;P0291,,"Spatial units P0169 and P0291 are only 0.09 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0160,boundary_conflict,medium,True,P0171;P0175,,"Spatial units P0171 and P0175 are only 0.18 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0161,boundary_conflict,medium,True,P0172;P0186,,"Spatial units P0172 and P0186 are only 0.15 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0162,boundary_conflict,medium,True,P0177;P0442,,"Spatial units P0177 and P0442 are only 0.27 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0163,boundary_conflict,medium,True,P0177;P0281,,"Spatial units P0177 and P0281 are only 0.29 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0164,boundary_conflict,medium,True,P0178;P0440,,"Spatial units P0178 and P0440 are only 0.09 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0165,boundary_conflict,medium,True,P0179;P0399,,"Spatial units P0179 and P0399 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0166,boundary_conflict,medium,True,P0184;P0420,,"Spatial units P0184 and P0420 are only 0.12 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0167,boundary_conflict,medium,True,P0186;P0372,,"Spatial units P0186 and P0372 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0168,boundary_conflict,medium,True,P0187;P0188,,"Spatial units P0187 and P0188 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0169,boundary_conflict,medium,True,P0190;P0338,,"Spatial units P0190 and P0338 are only 0.36 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0170,boundary_conflict,medium,True,P0190;P0436,,"Spatial units P0190 and P0436 are only 0.40 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0171,boundary_conflict,medium,True,P0192;P0197,,"Spatial units P0192 and P0197 are only 0.06 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0172,boundary_conflict,medium,True,P0194;P0195,,"Spatial units P0194 and P0195 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0173,boundary_conflict,medium,True,P0200;P0268,,"Spatial units P0200 and P0268 are only 0.20 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0174,boundary_conflict,medium,True,P0201;P0417,,"Spatial units P0201 and P0417 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0175,boundary_conflict,medium,True,P0202;P0203,,"Spatial units P0202 and P0203 are only 0.29 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0176,boundary_conflict,medium,True,P0202;P0206,,"Spatial units P0202 and P0206 are only 0.03 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0177,boundary_conflict,medium,True,P0202;P0207,,"Spatial units P0202 and P0207 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0178,boundary_conflict,medium,True,P0203;P0313,,"Spatial units P0203 and P0313 are only 0.37 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0179,boundary_conflict,medium,True,P0206;P0338,,"Spatial units P0206 and P0338 are only 0.22 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0180,boundary_conflict,medium,True,P0206;P0207,,"Spatial units P0206 and P0207 are only 0.06 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0181,boundary_conflict,medium,True,P0211;P0296,,"Spatial units P0211 and P0296 are only 0.50 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0182,boundary_conflict,medium,True,P0212;P0342,,"Spatial units P0212 and P0342 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0183,boundary_conflict,medium,True,P0214;P0296,,"Spatial units P0214 and P0296 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0184,boundary_conflict,medium,True,P0221;P0315,,"Spatial units P0221 and P0315 are only 0.24 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0185,boundary_conflict,medium,True,P0235;P0333,,"Spatial units P0235 and P0333 are only 0.24 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0186,boundary_conflict,medium,True,P0240;P0387,,"Spatial units P0240 and P0387 are only 0.20 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0187,boundary_conflict,medium,True,P0247;P0273,,"Spatial units P0247 and P0273 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0188,boundary_conflict,medium,True,P0248;P0249,,"Spatial units P0248 and P0249 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0189,boundary_conflict,medium,True,P0251;P0352,,"Spatial units P0251 and P0352 are only 0.46 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0190,boundary_conflict,medium,True,P0252;P0473,,"Spatial units P0252 and P0473 are only 0.37 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0191,boundary_conflict,medium,True,P0256;P0383,,"Spatial units P0256 and P0383 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0192,boundary_conflict,medium,True,P0256;P0284,,"Spatial units P0256 and P0284 are only 0.30 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0193,boundary_conflict,medium,True,P0258;P0320,,"Spatial units P0258 and P0320 are only 0.44 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0194,boundary_conflict,medium,True,P0258;P0265,,"Spatial units P0258 and P0265 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0195,boundary_conflict,medium,True,P0259;P0329,,"Spatial units P0259 and P0329 are only 0.26 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0196,boundary_conflict,medium,True,P0264;P0351,,"Spatial units P0264 and P0351 are only 0.23 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0197,boundary_conflict,medium,True,P0265;P0366,,"Spatial units P0265 and P0366 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0198,boundary_conflict,medium,True,P0267;P0447,,"Spatial units P0267 and P0447 are only 0.50 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0199,boundary_conflict,medium,True,P0270;P0323,,"Spatial units P0270 and P0323 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0200,boundary_conflict,medium,True,P0270;P0317,,"Spatial units P0270 and P0317 are only 0.46 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0201,boundary_conflict,medium,True,P0272;P0432,,"Spatial units P0272 and P0432 are only 0.32 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0202,boundary_conflict,medium,True,P0276;P0329,,"Spatial units P0276 and P0329 are only 0.06 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0203,boundary_conflict,medium,True,P0277;P0393,,"Spatial units P0277 and P0393 are only 0.21 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0204,boundary_conflict,medium,True,P0277;P0462,,"Spatial units P0277 and P0462 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0205,boundary_conflict,medium,True,P0278;P0412,,"Spatial units P0278 and P0412 are only 0.29 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0206,boundary_conflict,medium,True,P0278;P0446,,"Spatial units P0278 and P0446 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0207,boundary_conflict,medium,True,P0279;P0388,,"Spatial units P0279 and P0388 are only 0.01 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0208,boundary_conflict,medium,True,P0281;P0370,,"Spatial units P0281 and P0370 are only 0.44 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0209,boundary_conflict,medium,True,P0284;P0459,,"Spatial units P0284 and P0459 are only 0.35 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0210,boundary_conflict,medium,True,P0288;P0295,,"Spatial units P0288 and P0295 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0211,boundary_conflict,medium,True,P0292;P0382,,"Spatial units P0292 and P0382 are only 0.16 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0212,boundary_conflict,medium,True,P0299;P0443,,"Spatial units P0299 and P0443 are only 0.18 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0213,boundary_conflict,medium,True,P0301;P0391,,"Spatial units P0301 and P0391 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0214,boundary_conflict,medium,True,P0301;P0369,,"Spatial units P0301 and P0369 are only 0.41 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0215,boundary_conflict,medium,True,P0305;P0339,,"Spatial units P0305 and P0339 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0216,boundary_conflict,medium,True,P0310;P0358,,"Spatial units P0310 and P0358 are only 0.34 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0217,boundary_conflict,medium,True,P0310;P0419,,"Spatial units P0310 and P0419 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0218,boundary_conflict,medium,True,P0312;P0436,,"Spatial units P0312 and P0436 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0219,boundary_conflict,medium,True,P0313;P0417,,"Spatial units P0313 and P0417 are only 0.38 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0220,boundary_conflict,medium,True,P0319;P0394,,"Spatial units P0319 and P0394 are only 0.47 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0221,boundary_conflict,medium,True,P0320;P0449,,"Spatial units P0320 and P0449 are only 0.41 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0222,boundary_conflict,medium,True,P0328;P0387,,"Spatial units P0328 and P0387 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0223,boundary_conflict,medium,True,P0334;P0435,,"Spatial units P0334 and P0435 are only 0.16 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0224,boundary_conflict,medium,True,P0340;P0458,,"Spatial units P0340 and P0458 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0225,boundary_conflict,medium,True,P0340;P0457,,"Spatial units P0340 and P0457 are only 0.30 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0226,boundary_conflict,medium,True,P0341;P0382,,"Spatial units P0341 and P0382 are only 0.48 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0227,boundary_conflict,medium,True,P0346;P0401,,"Spatial units P0346 and P0401 are only 0.28 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0228,boundary_conflict,medium,True,P0346;P0454,,"Spatial units P0346 and P0454 are only 0.31 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0229,boundary_conflict,medium,True,P0347;P0371,,"Spatial units P0347 and P0371 are only 0.33 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0230,boundary_conflict,medium,True,P0369;P0455,,"Spatial units P0369 and P0455 are only 0.29 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0231,boundary_conflict,medium,True,P0371;P0403,,"Spatial units P0371 and P0403 are only 0.49 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0232,boundary_conflict,medium,True,P0381;P0450,,"Spatial units P0381 and P0450 are only 0.46 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0233,boundary_conflict,medium,True,P0381;P0451,,"Spatial units P0381 and P0451 are only 0.14 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0234,boundary_conflict,medium,True,P0383;P0461,,"Spatial units P0383 and P0461 are only 0.45 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0235,boundary_conflict,medium,True,P0396;P0464,,"Spatial units P0396 and P0464 are only 0.30 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0236,boundary_conflict,medium,True,P0405;P0474,,"Spatial units P0405 and P0474 are only 0.01 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0237,boundary_conflict,medium,True,P0427;P0428,,"Spatial units P0427 and P0428 are only 0.20 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0238,boundary_conflict,medium,True,P0428;P0429,,"Spatial units P0428 and P0429 are only 0.00 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0239,boundary_conflict,medium,True,P0438;P0439,,"Spatial units P0438 and P0439 are only 0.22 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0240,boundary_conflict,medium,True,P0440;P0441,,"Spatial units P0440 and P0441 are only 0.25 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0241,boundary_conflict,medium,True,P0445;P0446,,"Spatial units P0445 and P0446 are only 0.42 m apart -- inside typical handheld GPS error, verify they don't actually overlap.",open
+QA-0242,duplicate_claim,high,True,P0013,SYN-HH-0013;SYN-HH-0014,"Spatial unit P0013 has 2 competing claims (STR-0020, STR-0021) from different households -- needs adjudication.",open
+QA-0243,duplicate_claim,high,True,P0015,SYN-HH-0016;SYN-HH-0017,"Spatial unit P0015 has 2 competing claims (STR-0062, STR-0063) from different households -- needs adjudication.",open
+QA-0244,duplicate_claim,high,True,P0017,SYN-HH-0019;SYN-HH-0020,"Spatial unit P0017 has 2 competing claims (STR-0065, STR-0066) from different households -- needs adjudication.",open
+QA-0245,duplicate_claim,high,True,P0059,SYN-HH-0062;SYN-HH-0063,"Spatial unit P0059 has 2 competing claims (STR-0048, STR-0049) from different households -- needs adjudication.",open
+QA-0246,duplicate_claim,high,True,P0092,SYN-HH-0096;SYN-HH-0097,"Spatial unit P0092 has 2 competing claims (STR-0129, STR-0130) from different households -- needs adjudication.",open
+QA-0247,duplicate_claim,high,True,P0139,SYN-HH-0144;SYN-HH-0145,"Spatial unit P0139 has 2 competing claims (STR-0176, STR-0177) from different households -- needs adjudication.",open
+QA-0248,duplicate_claim,high,True,P0157,SYN-HH-0163;SYN-HH-0164,"Spatial unit P0157 has 2 competing claims (STR-0193, STR-0194) from different households -- needs adjudication.",open
+QA-0249,duplicate_claim,high,True,P0161,SYN-HH-0168;SYN-HH-0169,"Spatial unit P0161 has 2 competing claims (STR-0198, STR-0199) from different households -- needs adjudication.",open
+QA-0250,duplicate_claim,high,True,P0188,SYN-HH-0196;SYN-HH-0197,"Spatial unit P0188 has 2 competing claims (STR-0225, STR-0226) from different households -- needs adjudication.",open
+QA-0251,duplicate_claim,high,True,P0209,SYN-HH-0218;SYN-HH-0219,"Spatial unit P0209 has 2 competing claims (STR-0246, STR-0247) from different households -- needs adjudication.",open
+QA-0252,duplicate_claim,high,True,P0224,SYN-HH-0234;SYN-HH-0235,"Spatial unit P0224 has 2 competing claims (STR-0261, STR-0262) from different households -- needs adjudication.",open
+QA-0253,duplicate_claim,high,True,P0297,SYN-HH-0308;SYN-HH-0309,"Spatial unit P0297 has 2 competing claims (STR-0042, STR-0043) from different households -- needs adjudication.",open
+QA-0254,duplicate_claim,high,True,P0418,SYN-HH-0430;SYN-HH-0431,"Spatial unit P0418 has 2 competing claims (STR-0003, STR-0004) from different households -- needs adjudication.",open
+QA-0255,duplicate_claim,high,True,P0433,SYN-HH-0446;SYN-HH-0447,"Spatial unit P0433 has 2 competing claims (STR-0451, STR-0452) from different households -- needs adjudication.",open
