@@ -66,3 +66,14 @@ present it as a real location.
   routine ones), each a real crop of `imagery.tif` at that parcel's
   location — not a full photo per parcel, to keep the repo lean, but a
   genuine demonstration of the capability.
+- `stdm.gpkg` (Phase 4) — the Social Tenure Domain Model: `spatial_unit`
+  (spatial layer, the 416 validated parcels), `party` (453 households,
+  keyed by `household_id`, one row per unique claimant), `tenure_type`
+  (the 5-code lookup), and `social_tenure_relationship` (453 rows linking
+  party ↔ spatial unit ↔ tenure type — 37 spatial units carry two STRs,
+  one per disputing claimant). The non-spatial tables are registered as
+  proper GeoPackage `attributes` tables (spec section 6), not just SQL
+  leftovers, so they browse correctly in QGIS/any GeoPackage-aware tool.
+  See `qgis/README.md` for why this is a scripted schema replication of
+  STDM rather than the live STDM QGIS plugin, and how it maps to Phase 3's
+  data.
