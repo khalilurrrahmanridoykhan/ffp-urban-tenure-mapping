@@ -1,5 +1,53 @@
-# QGIS project
+# QGIS / STDM
 
-The QGIS/STDM core: parcel fabric, tenure attributes, topology QA,
-tenure-security classification, and the print atlas. Populated from
-Phase 1 onward.
+The parcel fabric, tenure attributes, topology QA, tenure-security
+classification, and print atlas all live in `data/synthetic/` and
+`outputs/` (see those folders' READMEs) rather than as files checked in
+here — this folder documents the QGIS/STDM methodology and how to open
+the data in QGIS directly; a bundled `.qgz` project is added once the
+print atlas (Phase 8) needs one.
+
+## STDM (Phase 4)
+
+The core FFP data structure is **party ↔ spatial unit ↔ social tenure
+relationship**, not just parcel geometry — one spatial unit can carry
+more than one (possibly conflicting) STR, which is how a real disputed
+claim gets represented instead of forced into a single "owner" field.
+
+The real [STDM QGIS plugin](https://stdm.gltn.net/) implements exactly
+this schema against a PostgreSQL/PostGIS backend, configured through its
+GUI Configuration Wizard. Two things rule out running the live plugin in
+this repo: it doesn't yet support this QGIS version, and its
+Configuration Wizard has no scriptable/GUI-free path — which would break
+every other phase's "one command reproduces this" pattern. So
+`scripts/build_stdm.py` implements STDM's own schema directly against a
+single portable GeoPackage (`data/synthetic/stdm.gpkg`):
+
+| STDM concept | Table | Source |
+|---|---|---|
+| Spatial unit | `spatial_unit` (spatial layer) | Phase 3's `validated_parcels` |
+| Party | `party` | Phase 3's field submissions, deduplicated by `household_id` |
+| Tenure type | `tenure_type` | the 5-code FFP lookup used since Phase 3 |
+| Social tenure relationship | `social_tenure_relationship` | one row per claim: `party_id` × `spatial_unit_id` × `tenure_type_id`, `str_status` = `validated` or `disputed` |
+
+The non-spatial tables are registered as proper GeoPackage `attributes`
+tables (spec section 6), not just leftover SQL — they browse correctly
+as related tables in QGIS or any other GeoPackage-aware tool. Open
+`stdm.gpkg` in QGIS to see the actual party/spatial_unit/STR structure;
+join `social_tenure_relationship` to `spatial_unit` on
+`spatial_unit_id` to see tenure overlaid on the parcel fabric, or to
+`party` on `party_id` to see what any one household claims.
+
+37 spatial units carry two STRs each (both `disputed`) — real double
+claims from Phase 3, not synthetic label noise. Reproduce:
+`python3 scripts/build_stdm.py`.
+
+### Tenure documentation (certificates)
+
+`scripts/generate_certificates.py` generates one PDF per validated STR —
+STDM's own Document Generator module produces the same kind of output
+from this same schema. Only issued for `validated` STRs (one per tenure
+type, plus a few extras — a representative sample, not all 416);
+disputed STRs get no certificate, which is deliberate: they're exactly
+the material Phase 5's adjudication queue works from. Output:
+`outputs/certificates/<str_id>.pdf`.

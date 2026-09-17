@@ -9,6 +9,9 @@ Generated deliverables.
 - `phase3_field_validation_preview.png` (Phase 3) — validated parcels
   colored by what the field pass found: green = AI draft confirmed,
   orange = boundary corrected, thick magenta = disputed claim.
+- `certificates/` (Phase 4) — a sample of STDM-style tenure
+  certificates, one PDF per validated social tenure relationship (one
+  per tenure type, plus a few extras). See `qgis/README.md`.
 
-The tenure-security atlas PDF and per-parcel certificate sheets are
-added from Phase 8 onward.
+The settlement-level tenure-security atlas PDF is added from Phase 8
+onward.

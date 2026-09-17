@@ -41,8 +41,8 @@ See `docs/ROADMAP.md` for the phase-by-phase build plan and current status.
 ## Requirements
 
 Python 3.11+ with `geopandas`, `shapely`, `rasterio`, `numpy`, `pandas`,
-`Pillow`, `scipy`, `openpyxl`, and (for `model/`) `torch`. No GPU
-required — training runs fine on CPU or Apple Silicon (MPS);
+`Pillow`, `scipy`, `openpyxl`, `reportlab`, and (for `model/`) `torch`.
+No GPU required — training runs fine on CPU or Apple Silicon (MPS);
 `model/README.md` has details.
 
 ## License

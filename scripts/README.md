@@ -11,6 +11,11 @@
 - `simulate_field_validation.py` (Phase 3) — simulates the field pass
   against the AI draft, producing `data/synthetic/field_submissions.csv`
   and `data/synthetic/validated_parcels.gpkg`.
+- `build_stdm.py` (Phase 4) — builds the STDM party/spatial_unit/tenure_type/
+  social_tenure_relationship schema into `data/synthetic/stdm.gpkg`. See
+  `qgis/README.md` for the methodology.
+- `generate_certificates.py` (Phase 4) — generates sample tenure
+  certificates (PDF) from `stdm.gpkg` into `outputs/certificates/`.
 
 The full end-to-end pipeline (PyQGIS/`qgis_process`, covering every phase
 through the atlas output) is scripted in Phase 9.
