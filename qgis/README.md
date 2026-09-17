@@ -79,3 +79,33 @@ in `qa_report.md`, not as 375 individual queue rows — that's not an
 actionable per-parcel finding.
 
 Reproduce: `python3 scripts/topology_qa.py`.
+
+## Tenure security classification (Phase 6)
+
+`scripts/classify_tenure_security.py` produces
+`data/synthetic/tenure_security.gpkg` — the layer both the Phase 7
+dashboard and Phase 8 atlas present. It deliberately keeps two risk
+dimensions apart rather than folding them into one number silently:
+
+- **tenure type** — a 1-5 base score from the STR's tenure type
+  (`owned_documented`=5 down to `informal_occupation`=1)
+- **spatial fitness** — whether Phase 5 flagged the parcel's boundary as
+  a near-miss conflict; if so, the score drops by 1 (floor 1), because a
+  physically ambiguous extent undermines security regardless of the
+  tenure claim's strength
+
+A disputed STR (Phase 5's `duplicate_claim`) overrides both and forces
+`contested` — a disputed claim isn't "weak tenure," it's a different
+kind of insecurity: the right itself is unresolved. Phase 5's
+`low_confidence_confirmation` findings are deliberately **not** used
+here — that's a model/spatial-QA signal about the AI draft, not a
+tenure-security signal about the household's claim.
+
+| class | score | meaning | count |
+|---|---|---|---|
+| secure | 4-5 | owned, no open boundary conflict | 130 |
+| moderate | 2-3 | customary/owned-undocumented, or downgraded by a boundary conflict | 124 |
+| at_risk | 1 | informal occupation or rented, uncontested | 125 |
+| contested | — | disputed STR, overrides tenure type entirely | 37 |
+
+Reproduce: `python3 scripts/classify_tenure_security.py`.
