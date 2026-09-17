@@ -12,6 +12,8 @@ tenure record. See `data/synthetic/README.md` for how each layer is
 generated. This is a methodology demonstration, not a deployable cadastre
 system.
 
+**Live dashboard:** https://khalilurrrahmanridoykhan.github.io/ffp-urban-tenure-mapping/
+
 ## Why Fit-For-Purpose
 
 A full cadastral survey is slow and expensive, which is exactly why dense,
