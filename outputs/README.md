@@ -12,6 +12,9 @@ Generated deliverables.
 - `certificates/` (Phase 4) — a sample of STDM-style tenure
   certificates, one PDF per validated social tenure relationship (one
   per tenure type, plus a few extras). See `qgis/README.md`.
+- `phase5_adjudication_queue_preview.png` (Phase 5) — parcels colored by
+  QA finding: magenta = duplicate claim, orange = boundary conflict,
+  yellow = low-confidence spot-check recommended, grey = no finding.
 
 The settlement-level tenure-security atlas PDF is added from Phase 8
 onward.

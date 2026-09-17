@@ -77,3 +77,10 @@ present it as a real location.
   See `qgis/README.md` for why this is a scripted schema replication of
   STDM rather than the live STDM QGIS plugin, and how it maps to Phase 3's
   data.
+- `adjudication_queue.csv` + `qa_report.md` (Phase 5) — the output of
+  `scripts/topology_qa.py`: 119 findings (37 duplicate claims, 5
+  near-miss boundaries under 0.5m apart, 77 AI-confirmed parcels with
+  below-average model confidence flagged for a spot-check), plus a
+  report showing every check that ran, including the ones that came back
+  clean (0 invalid geometries, 0 overlaps, 0 orphaned STR references).
+  See `qgis/README.md` for what each check does and why.

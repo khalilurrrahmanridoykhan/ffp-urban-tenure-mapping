@@ -51,3 +51,31 @@ type, plus a few extras — a representative sample, not all 416);
 disputed STRs get no certificate, which is deliberate: they're exactly
 the material Phase 5's adjudication queue works from. Output:
 `outputs/certificates/<str_id>.pdf`.
+
+## Topology QA & adjudication queue (Phase 5)
+
+`scripts/topology_qa.py` runs six independent checks over the STDM data
+and produces `data/synthetic/adjudication_queue.csv` — the list a land
+officer would need to manually resolve, not something the script
+silently fixes:
+
+| check | what it catches | result |
+|---|---|---|
+| `invalid_geometry` | self-intersecting spatial units | 0 |
+| `overlap` | spatial units overlapping by >0.05 m² | 0 |
+| `boundary_conflict` | spatial units <0.5m apart without overlapping (inside typical handheld-GPS error) | 5 |
+| `duplicate_claim` | more than one STR on the same spatial unit | 37 |
+| `data_integrity` | an STR referencing a party or spatial unit that doesn't exist | 0 |
+| `low_confidence_confirmation` | a parcel the field pass confirmed as-is, but the AI draft's own confidence was below 0.9 | 77 |
+
+The 37 duplicate claims are real double claims inherited from Phase 3
+(37 spatial units carrying two STRs each in `stdm.gpkg`) — not
+fabricated for this phase. `low_confidence_confirmation` isn't a known
+error either; it's a risk-based recommendation (the enumerator did
+confirm these boundaries), which is why it's `action_required: false` in
+the queue while the other non-empty categories are `true`. Missing
+photo-evidence coverage (4/379 validated STRs) is reported as a metric
+in `qa_report.md`, not as 375 individual queue rows — that's not an
+actionable per-parcel finding.
+
+Reproduce: `python3 scripts/topology_qa.py`.
